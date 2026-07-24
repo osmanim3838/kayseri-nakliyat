@@ -25,8 +25,6 @@ const wordVariants = {
   }),
 };
 
-const WORD_COUNT = 8; // total words across all lines (for underline timing)
-
 const fade = {
   hidden: { opacity: 0, y: 24 },
   show: (i) => ({
@@ -84,7 +82,9 @@ export default function Hero() {
                   // Each word gets its own clip-mask so it slides up cleanly
                   <span key={word + wi} className="reveal-mask inline-flex">
                     <motion.span
-                      className={`inline-block ${word === "&" ? "text-[hsl(var(--accent))]" : ""}`}
+                      className={`inline-block ${
+                        word === "&" ? "text-[hsl(var(--accent))]" : "hero-gradient-text"
+                      }`}
                       custom={offset + wi}
                       variants={wordVariants}
                       initial="hidden"
@@ -98,14 +98,6 @@ export default function Hero() {
             );
           })}
         </h1>
-
-        {/* Accent underline that draws itself in after the words finish revealing */}
-        <motion.span
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.15 + WORD_COUNT * 0.08 + 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 block h-[5px] w-28 origin-left rounded-full bg-[hsl(var(--accent))]"
-        />
 
         <motion.div
           custom={2}

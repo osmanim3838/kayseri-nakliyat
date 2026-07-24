@@ -25,21 +25,23 @@ export default function Contact() {
             <span className="h-px w-10 bg-[hsl(var(--accent))]" />
             İletişim
           </p>
-          <h2 className="font-display text-4xl font-black leading-none tracking-tighter text-white sm:text-5xl lg:text-6xl">
-            Eşyanız yola çıkmaya hazır. <br />
-            <span className="text-[hsl(var(--accent))]">Tek yapmanız gereken aramak.</span>
+          <h2 className="font-hero text-4xl leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[3.75rem]">
+            Eşyanız yola <br className="hidden sm:block" />çıkmaya hazır.
+            <span className="mt-2 block bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(201_96%_60%)] bg-clip-text text-transparent">
+              Tek yapmanız gereken aramak.
+            </span>
           </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
+          <p className="mt-7 max-w-md text-base leading-[1.7] text-white/65 sm:text-lg">
             Fiyat almak, sevkiyat planlamak veya sadece bilgi almak için hemen bize ulaşın.
-            Kayseri&apos;den şehirler arası parça yük ve parça eşya taşımada, dakikalar içinde
-            net yanıt alırsınız. Aracımız yola çıkmadan önce her detay sizinle netleşir.
+            Kayseri&apos;den şehirler arası parça yük ve parça eşya taşımada,{" "}
+            <span className="font-semibold text-white">dakikalar içinde net yanıt</span> alırsınız.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a
               href={`tel:${PHONE_TEL}`}
               data-testid="contact-call-btn"
-              className="group flex items-center justify-center gap-3 rounded-md bg-[hsl(var(--accent))] px-7 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-[hsl(217_91%_66%)]"
+              className="group flex items-center justify-center gap-3 rounded-full bg-[hsl(var(--accent))] px-8 py-4 text-lg font-bold text-white shadow-lg shadow-[hsl(217_91%_60%)]/25 transition-colors duration-200 hover:bg-[hsl(217_91%_66%)]"
             >
               <Phone className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
               {PHONE_DISPLAY}
@@ -49,10 +51,13 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="contact-whatsapp-btn"
-              className="flex items-center justify-center gap-3 rounded-md border border-white/15 bg-white/5 px-7 py-4 text-lg font-bold text-white transition-colors duration-200 hover:bg-white/10"
+              className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[hsl(var(--wa))] px-8 py-4 text-lg font-bold text-white shadow-lg shadow-[hsl(var(--wa))]/25 transition-transform duration-200 hover:scale-[1.02]"
             >
-              <MessageCircle className="h-5 w-5 text-[hsl(var(--wa))]" />
-              WhatsApp
+              <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
+              <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+                <MessageCircle className="h-4 w-4" />
+              </span>
+              <span className="relative">WhatsApp</span>
             </a>
           </div>
 
