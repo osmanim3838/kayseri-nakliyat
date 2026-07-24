@@ -1,0 +1,95 @@
+{
+  "project_context": {
+    "brand_name": "kayseriparsiyel",
+    "theme": "Dark navy base (#0f172a) with high-contrast light accents. Highly trust-inspiring, modern, and elite.",
+    "primary_goal": "Drive phone calls and WhatsApp messages for intercity partial load logistics.",
+    "key_phone": "0533 127 55 00",
+    "address": "Yenidoğan, Ertuğrul Gazi Cd No:17, 38280 Talas/Kayseri"
+  },
+  "typography": {
+    "headings": "Cabinet Grotesk",
+    "body": "Manrope",
+    "logo": "CSS-based text logo. Use 'Cabinet Grotesk', mixing font weights: 'kayseri' in font-black and 'parsiyel' in font-light. No generic fonts like Inter.",
+    "rules": "Headings must use tight letter spacing (tracking-tighter). Overlines must be uppercase with wide spacing (tracking-[0.2em]). Line height must be tight for headers (leading-none)."
+  },
+  "colors": {
+    "archetype": "The Performance Pro mixed with Swiss Brutalist.",
+    "background": "hsl(222, 47%, 11%)", 
+    "foreground": "hsl(0, 0%, 100%)",
+    "primary": "hsl(201, 96%, 32%)",
+    "primary_foreground": "hsl(0, 0%, 100%)",
+    "accent": "hsl(217, 91%, 60%)",
+    "muted": "hsl(215, 25%, 27%)",
+    "border": "hsl(215, 25%, 27%)",
+    "rules": "Never use pure #000000. Use dark navy (#0f172a / slate-900) as the foundation. Ensure APCA contrast compliance for all text."
+  },
+  "visual_enhancers": {
+    "textures": "Use subtle noise/grain overlays to break the digital flatness.",
+    "surfaces": "Use Crystal Glassmorphism (backdrop-blur-xl bg-slate-900/60 border-white/10) for sticky header and floating UI elements.",
+    "borders": "1px crisp solid borders for cards and sections. Use nested radii correctly."
+  },
+  "grids_and_layouts": {
+    "grid_system": "Bento Grid Protocol (Mode A: The Tetris Grid). Asymmetrical, high visual tension. Avoid standard centered container layouts.",
+    "spacing": "Generous spacing. Use p-8, p-16, p-24. Containers with borders must have internal padding.",
+    "alignment": "Optical alignment over geometrical. Left-align text blocks. Never center everything."
+  },
+  "motion": {
+    "libraries": [
+      "framer-motion",
+      "lenis",
+      "react-fast-marquee"
+    ],
+    "patterns": {
+      "scroll": "Lenis smooth momentum scrolling is mandatory.",
+      "hero": "Kinetic masked line-by-line reveal for the main H1.",
+      "interactions": "Hover states must have micro-interactions (e.g., slight lift -translate-y-1, color shift).",
+      "marquee": "Slow, elegant editorial ribbon for trust keywords."
+    }
+  },
+  "accessibility": {
+    "contrast": "Minimum 4.5:1 for body text. Use hover states that explicitly change text color.",
+    "motion": "Respect prefers-reduced-motion.",
+    "testing": "All interactive elements (buttons, inputs, links) MUST include a data-testid attribute in kebab-case."
+  },
+  "component_styling": {
+    "buttons": "Sharp edges or subtle rounding (max 8px). High contrast. Hover states should lighten the hue.",
+    "cards": "Flat solid background or subtle glassmorphism with 1px border. Do not overuse soft drop shadows.",
+    "header": "Sticky nav (z-50). Must have a background (glassmorphism), never completely transparent.",
+    "whatsapp_fab": "Fixed bottom-right corner, vibrant WhatsApp green or brand accent, with a pulsing ring animation."
+  },
+  "sections_instructions": {
+    "hero": "Large kinetic hero. Background image heavily darkened (bg-slate-950/70) so text is 100% readable. H1: 'Kayseri Şehirler Arası Parça Yük Taşıma'. Prominent Phone CTA and WhatsApp CTA.",
+    "marquee": "Infinite scrolling marquee displaying trust signals (e.g., 'GÜVENLİ TESLİMAT • SİGORTALI TAŞIMACILIK • ZAMANINDA TESLİM').",
+    "what_we_do": "Grid of 3-4 clipped photography cards focusing on partial load transport. Short, punchy text. Asymmetrical layout.",
+    "manifesto": "Numbered trust chapters (e.g., 01. Güven, 02. Hız). Use overlapping typography and negative space.",
+    "contact": "Footer/Contact section combining persuasive text, prominent phone number (0533 127 55 00), and a modern styled Google Maps iframe for the address."
+  },
+  "image_urls": {
+    "hero_bg": {
+      "url": "https://images.pexels.com/photos/11053644/pexels-photo-11053644.jpeg",
+      "description": "Large truck on highway at dusk. Perfect for dramatic hero background."
+    },
+    "service_1": {
+      "url": "https://images.unsplash.com/photo-1543499459-d1460946bdc6",
+      "description": "Worker carrying boxes (Parça eşya taşıma)."
+    },
+    "service_2": {
+      "url": "https://images.pexels.com/photos/6169044/pexels-photo-6169044.jpeg",
+      "description": "Warehouse/fragile package handling."
+    },
+    "service_3": {
+      "url": "https://images.unsplash.com/photo-1784353897316-ce966fad1940",
+      "description": "Truck on night highway (Şehirler arası)."
+    }
+  },
+  "universal_guidelines_for_main_agent": [
+    "Install required libraries: framer-motion, lucide-react, @studio-freight/react-lenis (or lenis), react-fast-marquee.",
+    "Ensure the application strictly operates in Dark Mode to match the slate-900 / navy aesthetic.",
+    "Do NOT apply universal transitions (transition: all). Target specific properties.",
+    "Do NOT center align the app container in CSS. Remove default App.css text-align: center.",
+    "All interactive components MUST feature a data-testid attribute.",
+    "Avoid Shadcn defaults where they look generic; heavily customize them using Tailwind to match the brutalist/premium aesthetic.",
+    "Never use generic placeholder images. Use the provided image URLs.",
+    "No price calculators, no FAQ, no customer reviews, no service-area lists as per strict exclusions."
+  ]
+}
