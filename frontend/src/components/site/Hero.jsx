@@ -13,16 +13,19 @@ const LINES = [
   ["Eşya", "Taşıma"],
 ];
 
-// Each word fades + rises + sharpens from a slight blur (modern kinetic feel).
+// Premium per-word reveal: each word slides up out of its own clip-mask with a
+// subtle blur → sharp transition, staggered for a kinetic "type-set" feel.
 const wordVariants = {
-  hidden: { y: 34, opacity: 0, filter: "blur(10px)" },
+  hidden: { y: "112%", opacity: 0, filter: "blur(6px)" },
   show: (i) => ({
-    y: 0,
+    y: "0%",
     opacity: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.75, delay: 0.2 + i * 0.07, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, delay: 0.15 + i * 0.08, ease: [0.19, 1, 0.22, 1] },
   }),
 };
+
+const WORD_COUNT = 8; // total words across all lines (for underline timing)
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
@@ -78,21 +81,31 @@ export default function Hero() {
             return (
               <span key={li} className="flex flex-wrap gap-x-[0.2em]">
                 {words.map((word, wi) => (
-                  <motion.span
-                    key={word + wi}
-                    className={`inline-block ${word === "&" ? "text-[hsl(var(--accent))]" : ""}`}
-                    custom={offset + wi}
-                    variants={wordVariants}
-                    initial="hidden"
-                    animate="show"
-                  >
-                    {word}
-                  </motion.span>
+                  // Each word gets its own clip-mask so it slides up cleanly
+                  <span key={word + wi} className="reveal-mask inline-flex">
+                    <motion.span
+                      className={`inline-block ${word === "&" ? "text-[hsl(var(--accent))]" : ""}`}
+                      custom={offset + wi}
+                      variants={wordVariants}
+                      initial="hidden"
+                      animate="show"
+                    >
+                      {word}
+                    </motion.span>
+                  </span>
                 ))}
               </span>
             );
           })}
         </h1>
+
+        {/* Accent underline that draws itself in after the words finish revealing */}
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 0.15 + WORD_COUNT * 0.08 + 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-6 block h-[5px] w-28 origin-left rounded-full bg-[hsl(var(--accent))]"
+        />
 
         <motion.div
           custom={2}
