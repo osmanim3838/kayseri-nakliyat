@@ -1,0 +1,20 @@
+{
+  "summary": "Frontend-only static site 'kayseriparsiyel' verified end-to-end. 25/25 checks passed on desktop (1365x768) and mobile (390x844) viewports. All phone tel: links, WhatsApp wa.me links, in-page smooth navigation, service cards with images, manifesto chapters, Google Maps iframe, directions button, mobile hamburger nav, and strict-exclusion policies (no calculator/FAQ/reviews/service-area list) are correct.",
+  "tested_scope": ["frontend", "integration"],
+  "passed": [
+    "Site loads at REACT_APP_BACKEND_URL root and hero H1 shows 'Kayseri Şehirler Arası Parça Yük & Parça Eşya Taşıma'",
+    "Phone '0533 127 55 00' present in header/hero/contact/footer, all href=tel:+905331275500",
+    "Floating whatsapp-fab positioned bottom-right and points to wa.me/905331275500; hero/contact/footer WhatsApp links match",
+    "Header nav (nav-ne-yapiyoruz, nav-neden-biz, nav-iletisim) smooth-scrolls target sections into view",
+    "3 service cards render with loaded images (service-parca-esya, service-sehirler-arasi, service-paketleme)",
+    "Manifesto chapters 01/02/03 present",
+    "Contact section has Google Maps iframe for Talas/Kayseri address, address text, and 'Yol Tarifi Al' directions link",
+    "Mobile viewport (390x844): mobile-menu-toggle visible, opens mobile-nav with mobile-call-btn; 0px horizontal overflow",
+    "STRICT EXCLUSIONS honored: no price calculator, no service-area list, no FAQ, no customer reviews/testimonials detected in body text"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "100% (25/25)"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
