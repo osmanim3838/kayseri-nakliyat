@@ -60,12 +60,11 @@ export default function Hero() {
           variants={fade}
           initial="hidden"
           animate="show"
-          className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[hsl(var(--accent))]"
+          className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white drop-shadow-md"
         >
           <span className="h-px w-10 bg-[hsl(var(--accent))]" />
           Kayseri • Türkiye Geneli Sevkiyat
         </motion.p>
-
         {/* BAŞLIK KÜÇÜLTÜLDÜ: text-[13vw] -> text-[10vw], lg:text-8xl -> lg:text-7xl yapıldı */}
         <h1 className="hero-title-shadow max-w-5xl font-hero text-[10vw] leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
           {LINES.map((words, li) => {

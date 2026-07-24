@@ -12,9 +12,8 @@ export default function Footer() {
         <div>
           <Logo className="text-2xl" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Kayseri şehirler arası parça yük & parça eşya taşıma. Güvenli, sigortalı,
-            kapıdan kapıya.
-          </p>
+  Kayseri Şehirler Arası parsel Yük & Parsel Eşya Taşıma
+</p>
         </div>
 
         <div className="space-y-3">
