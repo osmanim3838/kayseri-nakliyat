@@ -6,14 +6,21 @@ import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/site";
 const HERO_BG =
   "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/xpr0e3s1_Gemini_Generated_Image_ln53n9ln53n9ln53.webp";
 
-// Headline split into masked lines for the signature on-load reveal.
-const LINES = ["Kayseri Şehirler Arası", "Parça Yük & Parça", "Eşya Taşıma"];
+// Headline split into lines → words for a modern, staggered mask reveal.
+const LINES = [
+  ["Kayseri", "Şehirler", "Arası"],
+  ["Parça", "Yük", "&", "Parça"],
+  ["Eşya", "Taşıma"],
+];
 
-const lineVariants = {
-  hidden: { y: "110%" },
+// Each word fades + rises + sharpens from a slight blur (modern kinetic feel).
+const wordVariants = {
+  hidden: { y: 34, opacity: 0, filter: "blur(10px)" },
   show: (i) => ({
-    y: "0%",
-    transition: { duration: 0.9, delay: 0.35 + i * 0.12, ease: [0.16, 1, 0.3, 1] },
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.75, delay: 0.2 + i * 0.07, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 
@@ -44,9 +51,9 @@ export default function Hero() {
           className="h-full w-full object-cover"
         />
         {/* Layered darkening tuned for the bright daytime photo so white text stays readable */}
-        <div className="absolute inset-0 bg-[hsl(222_47%_7%)]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_11%)] via-[hsl(222_47%_11%)]/30 to-[hsl(222_47%_11%)]/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222_47%_9%)]/90 via-[hsl(222_47%_9%)]/45 to-transparent" />
+        <div className="absolute inset-0 bg-[hsl(222_47%_7%)]/68" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_9%)] via-[hsl(222_47%_10%)]/45 to-[hsl(222_47%_10%)]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222_47%_8%)] via-[hsl(222_47%_9%)]/60 to-transparent" />
       </motion.div>
 
       <motion.div
@@ -64,33 +71,28 @@ export default function Hero() {
           Kayseri • Türkiye Geneli Sevkiyat
         </motion.p>
 
-        <h1 className="max-w-5xl font-hero text-[13vw] leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-8xl">
-          {LINES.map((line, i) => (
-            <span key={line} className="reveal-mask">
-              <motion.span
-                className="hero-gradient-text block"
-                custom={i}
-                variants={lineVariants}
-                initial="hidden"
-                animate="show"
-              >
-                {line}
-              </motion.span>
-            </span>
-          ))}
+        <h1 className="hero-title-shadow max-w-5xl font-hero text-[13vw] leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-8xl">
+          {LINES.map((words, li) => {
+            // running index across all words for a continuous stagger
+            const offset = LINES.slice(0, li).reduce((n, w) => n + w.length, 0);
+            return (
+              <span key={li} className="flex flex-wrap gap-x-[0.2em]">
+                {words.map((word, wi) => (
+                  <motion.span
+                    key={word + wi}
+                    className={`inline-block ${word === "&" ? "text-[hsl(var(--accent))]" : ""}`}
+                    custom={offset + wi}
+                    variants={wordVariants}
+                    initial="hidden"
+                    animate="show"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
+            );
+          })}
         </h1>
-
-        <motion.p
-          custom={1}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="mt-7 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"
-        >
-          Tek koliden büyük parçaya kadar; eşyanızı Kayseri&apos;den şehirler arası,
-          <span className="text-white"> güvenli, sigortalı ve zamanında </span>
-          kapıdan kapıya taşıyoruz. Sadece kapladığı yer kadar ödersiniz.
-        </motion.p>
 
         <motion.div
           custom={2}
@@ -102,7 +104,7 @@ export default function Hero() {
           <a
             href={`tel:${PHONE_TEL}`}
             data-testid="hero-call-btn"
-            className="group flex items-center justify-center gap-3 rounded-md bg-[hsl(var(--accent))] px-7 py-4 text-base font-bold text-white transition-colors duration-200 hover:bg-[hsl(217_91%_66%)]"
+            className="group flex items-center justify-center gap-3 rounded-full bg-[hsl(var(--accent))] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[hsl(217_91%_60%)]/25 transition-colors duration-200 hover:bg-[hsl(217_91%_66%)]"
           >
             <Phone className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
             Hemen Ara: {PHONE_DISPLAY}
@@ -112,10 +114,13 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             data-testid="hero-whatsapp-btn"
-            className="group flex items-center justify-center gap-3 rounded-md border border-white/15 bg-white/5 px-7 py-4 text-base font-bold text-white backdrop-blur transition-colors duration-200 hover:bg-white/10"
+            className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[hsl(var(--wa))] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[hsl(var(--wa))]/25 transition-transform duration-200 hover:scale-[1.02]"
           >
-            <MessageCircle className="h-5 w-5 text-[hsl(var(--wa))]" />
-            WhatsApp&apos;tan Yaz
+            <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
+            <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+              <MessageCircle className="h-4 w-4" />
+            </span>
+            <span className="relative">WhatsApp&apos;tan Yaz</span>
           </a>
         </motion.div>
 

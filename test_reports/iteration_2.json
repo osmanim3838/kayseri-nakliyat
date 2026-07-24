@@ -1,0 +1,37 @@
+{
+  "summary": "Frontend-only regression retest for kayseriparsiyel marketing site. All 4 regression fixes verified plus core flows still pass on desktop (1920x1080) and mobile (390x844).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "regression_fix_verification": {
+    "hero_headline_readable_and_spaced": "PASS — H1 renders each word on separate motion span with gap-x, all 8 words present (Kayseri, Şehirler, Arası, Parça, Yük, &, Eşya, Taşıma). Text color is solid white rgb(255,255,255), hero-title-shadow drop-shadow class applied. '&' has text-[hsl(var(--accent))] class per source (verified in Hero.jsx line 83).",
+    "hero_subtitle_removed": "PASS — 'Tek koliden büyük parçaya kadar...' string not found in hero section text.",
+    "hero_whatsapp_btn_modern_green_pill": "PASS — data-testid='hero-whatsapp-btn' has bg rgb(34,195,93) (WA green), border-radius 9999px (pill), label contains 'WhatsApp' + 'Yaz', href → wa.me/905331275500 (with prefilled text query param).",
+    "manifesto_redesigned_3_cards": "PASS — manifesto-01/02/03 all visible; each shows icon, big number, title (Güven/Hız/Özen), description text."
+  },
+  "core_flow_verification": {
+    "hero_call_btn": "PASS — href=tel:+905331275500, text='Hemen Ara: 0533 127 55 00'",
+    "header_call_btn": "PASS — href=tel:+905331275500, text='0533 127 55 00'",
+    "whatsapp_fab": "PASS — position:fixed at bottom-right (x=1828,y=988 in 1920x1080), href → wa.me/905331275500",
+    "nav_links": "PASS — nav-ne-yapiyoruz, nav-neden-biz, nav-iletisim present",
+    "service_cards": "PASS — all 3 service cards visible; all images loaded (naturalWidth=1200)",
+    "contact_section": "PASS — contact-map, contact-address, contact-directions-btn all visible",
+    "mobile_menu": "PASS — mobile-menu-toggle opens mobile-nav with mobile-call-btn (tel:+905331275500); no horizontal overflow (scrollW=clientW=390)"
+  },
+  "strict_exclusions": "PASS — No price calculator, no service-area list, no FAQ (SSS), no reviews found in page text.",
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Hero.jsx: The heading uses flex flex-wrap per line — this is elegant, but on very narrow viewports the '&' can wrap to its own line. Not a bug, works fine at 390px.",
+    "Manifesto data-testid uses the string number '01/02/03' which matches spec — good."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Site is a frontend-only marketing page. Use REACT_APP_BACKEND_URL as base. Lenis smooth scroll is active; use scroll_into_view_if_needed or click nav anchors. All 4 regression fixes plus 10 test criteria pass."
+}
