@@ -53,10 +53,12 @@ export default function Manifesto() {
             <span className="h-px w-10 bg-[hsl(var(--accent))]" />
             Neden Biz
           </p>
-          <h2 className="font-display text-3xl font-black leading-[1.05] tracking-tighter text-white sm:text-4xl lg:text-5xl">
+          <h2 className="font-hero text-3xl leading-[1.05] tracking-tight text-white sm:text-4xl lg:text-5xl">
             Neden bizimle taşıtmalısınız?
             <br className="hidden sm:block" />
-            <span className="text-white/55"> Çünkü işimizi üç net ilkeye indirgedik.</span>
+            <span className="mt-2 block bg-gradient-to-r from-white via-[hsl(201_96%_75%)] to-[hsl(var(--accent))] bg-clip-text text-transparent">
+              Çünkü işimizi üç net ilkeye indirgedik.
+            </span>
           </h2>
         </motion.div>
 
@@ -81,12 +83,12 @@ export default function Manifesto() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))] transition-colors duration-300 group-hover:bg-[hsl(var(--accent))] group-hover:text-white">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <span className="font-hero text-5xl leading-none text-white/10 transition-colors duration-300 group-hover:text-[hsl(var(--accent))]/40">
+                  <span className="font-hero text-6xl leading-none text-transparent [-webkit-text-stroke:1.5px_hsl(215_25%_38%)] transition-all duration-300 group-hover:[-webkit-text-stroke:1.5px_hsl(var(--accent))]">
                     {c.no}
                   </span>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold tracking-tight text-white">
+                <h3 className="font-hero text-2xl tracking-tight text-white">
                   {c.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/65">{c.text}</p>

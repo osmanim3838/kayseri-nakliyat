@@ -5,18 +5,20 @@ const SERVICES = [
   {
     title: "Parça Eşya Taşıma",
     text: "Tek koliden büyük parçaya; eşyanız kadar yer, eşyanız kadar ödeme.",
-    img: "https://images.unsplash.com/photo-1543499459-d1460946bdc6?auto=format&fit=crop&w=1200&q=80",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/ai1k13pk_par%C3%A7a%20e%C5%9Fya%20ta%C5%9F%C4%B1ma%20.webp",
     icon: Package,
     span: "lg:col-span-3 lg:row-span-2",
     testid: "service-parca-esya",
+    hideWatermark: true,
   },
   {
     title: "Şehirler Arası Sevkiyat",
     text: "Kayseri'den Türkiye'nin her noktasına düzenli çıkış.",
-    img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/uuozptxt_sevkiyat.webp",
     icon: Truck,
     span: "lg:col-span-3",
     testid: "service-sehirler-arasi",
+    hideWatermark: true,
   },
   {
     title: "Güvenli Paketleme & Teslim",
@@ -56,6 +58,16 @@ function Card({ s, i }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_7%)] via-[hsl(222_47%_9%)]/40 to-transparent" />
+      {/* Mask the AI-image corner watermark with a soft radial darkening (bottom-right) */}
+      {s.hideWatermark && (
+        <div
+          className="pointer-events-none absolute bottom-0 right-0 h-32 w-32"
+          style={{
+            background:
+              "radial-gradient(circle at bottom right, hsl(222 47% 7%) 38%, transparent 72%)",
+          }}
+        />
+      )}
       <div className="relative flex h-full flex-col justify-end p-7">
         <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-white/15 bg-white/10 backdrop-blur">
           <Icon className="h-5 w-5 text-[hsl(var(--accent))]" />
