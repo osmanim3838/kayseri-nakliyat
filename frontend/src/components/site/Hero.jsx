@@ -4,7 +4,7 @@ import { Phone, MessageCircle, MapPin, ArrowDown } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/site";
 
 const HERO_BG =
-  "https://images.pexels.com/photos/11053644/pexels-photo-11053644.jpeg?auto=compress&cs=tinysrgb&w=1920";
+  "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/xpr0e3s1_Gemini_Generated_Image_ln53n9ln53n9ln53.webp";
 
 // Headline split into masked lines for the signature on-load reveal.
 const LINES = ["Kayseri Şehirler Arası", "Parça Yük & Parça", "Eşya Taşıma"];
@@ -40,12 +40,13 @@ export default function Hero() {
       <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 -z-10">
         <img
           src={HERO_BG}
-          alt="Şehirler arası yük taşıma tırı gün batımında"
+          alt="Kayseri Parsiyel Nakliyat tırı Erciyes önünde şehirler arası yolda"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[hsl(222_47%_7%)]/78" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_11%)] via-transparent to-[hsl(222_47%_11%)]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222_47%_11%)]/70 to-transparent" />
+        {/* Layered darkening tuned for the bright daytime photo so white text stays readable */}
+        <div className="absolute inset-0 bg-[hsl(222_47%_7%)]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_11%)] via-[hsl(222_47%_11%)]/30 to-[hsl(222_47%_11%)]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222_47%_9%)]/90 via-[hsl(222_47%_9%)]/45 to-transparent" />
       </motion.div>
 
       <motion.div
@@ -63,11 +64,11 @@ export default function Hero() {
           Kayseri • Türkiye Geneli Sevkiyat
         </motion.p>
 
-        <h1 className="max-w-5xl font-display text-[13vw] font-black leading-[0.92] tracking-tighter text-white sm:text-6xl lg:text-8xl">
+        <h1 className="max-w-5xl font-hero text-[13vw] leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-8xl">
           {LINES.map((line, i) => (
             <span key={line} className="reveal-mask">
               <motion.span
-                className="block"
+                className="hero-gradient-text block"
                 custom={i}
                 variants={lineVariants}
                 initial="hidden"

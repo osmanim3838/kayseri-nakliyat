@@ -1,4 +1,5 @@
 @import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800,900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
@@ -51,6 +52,37 @@ body {
 /* ---- Typographic system ---- */
 .font-display {
     font-family: "Cabinet Grotesk", "Manrope", sans-serif;
+}
+
+/* Modern display font used for the kinetic hero headline */
+.font-hero {
+    font-family: "Clash Display", "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+/* Animated gradient sheen that continuously sweeps across the hero headline */
+@keyframes hero-sheen {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+.hero-gradient-text {
+    background-image: linear-gradient(
+        100deg,
+        #ffffff 0%,
+        #ffffff 35%,
+        hsl(201 96% 70%) 50%,
+        #ffffff 65%,
+        #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: hero-sheen 6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-gradient-text { animation: none; }
 }
 
 /* Kinetic hero mask: each line clipped, child translated up on reveal */
