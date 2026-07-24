@@ -5,7 +5,7 @@ const SERVICES = [
   {
     title: "Parça Eşya Taşıma",
     text: "Tek koliden büyük parçaya; eşyanız kadar yer, eşyanız kadar ödeme.",
-    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/ai1k13pk_par%C3%A7a%20e%C5%9Fya%20ta%C5%9F%C4%B1ma%20.webp",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/126muqj3_Gemini_Generated_Image_65zfc065zfc065zf.webp",
     icon: Package,
     span: "lg:col-span-3 lg:row-span-2",
     testid: "service-parca-esya",
@@ -19,6 +19,9 @@ const SERVICES = [
     span: "lg:col-span-3",
     testid: "service-sehirler-arasi",
     hideWatermark: true,
+    // zoom + anchor bottom-right to crop out the baked truck icon in the top-left
+    imgClass:
+      "absolute inset-0 h-full w-full origin-bottom-right scale-[1.22] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.28]",
   },
   {
     title: "Güvenli Paketleme & Teslim",
@@ -55,7 +58,10 @@ function Card({ s, i }) {
       <img
         src={s.img}
         alt={s.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+        className={
+          s.imgClass ||
+          "absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+        }
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222_47%_7%)] via-[hsl(222_47%_9%)]/40 to-transparent" />
       {/* Mask the AI-image corner watermark with a soft radial darkening (bottom-right) */}

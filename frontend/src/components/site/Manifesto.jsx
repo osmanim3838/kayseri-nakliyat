@@ -74,24 +74,28 @@ export default function Manifesto() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-60px" }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.01] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[hsl(var(--accent))]/40"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[hsl(222_44%_11%)] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[hsl(var(--accent))]/50 sm:p-9"
               >
-                {/* top accent line that expands on hover */}
-                <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-[hsl(var(--accent))] transition-all duration-500 group-hover:w-full" />
+                {/* hover radial glow in the corner */}
+                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/0 blur-3xl transition-all duration-500 group-hover:bg-[hsl(var(--accent))]/25" />
+                {/* oversized ghost numeral as a background watermark */}
+                <span className="pointer-events-none absolute -right-3 -top-8 select-none font-hero text-[9rem] leading-none text-white/[0.035] transition-colors duration-500 group-hover:text-[hsl(var(--accent))]/10">
+                  {c.no}
+                </span>
 
-                <div className="mb-8 flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))] transition-colors duration-300 group-hover:bg-[hsl(var(--accent))] group-hover:text-white">
-                    <Icon className="h-5 w-5" />
+                <div className="relative">
+                  <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(201_96%_42%)] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
+                    <Icon className="h-6 w-6" />
                   </span>
-                  <span className="font-hero text-6xl leading-none text-transparent [-webkit-text-stroke:1.5px_hsl(215_25%_38%)] transition-all duration-300 group-hover:[-webkit-text-stroke:1.5px_hsl(var(--accent))]">
-                    {c.no}
-                  </span>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[hsl(var(--accent))]">
+                    İlke {c.no}
+                  </p>
+                  <h3 className="font-hero text-2xl tracking-tight text-white sm:text-[1.75rem]">
+                    {c.title}
+                  </h3>
+                  <div className="my-5 h-px w-12 bg-white/15 transition-all duration-500 group-hover:w-24 group-hover:bg-[hsl(var(--accent))]" />
+                  <p className="text-sm leading-relaxed text-white/60">{c.text}</p>
                 </div>
-
-                <h3 className="font-hero text-2xl tracking-tight text-white">
-                  {c.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">{c.text}</p>
               </motion.article>
             );
           })}
