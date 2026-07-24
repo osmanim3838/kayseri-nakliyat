@@ -78,18 +78,11 @@ export default function Manifesto() {
               >
                 {/* hover radial glow in the corner */}
                 <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/0 blur-3xl transition-all duration-500 group-hover:bg-[hsl(var(--accent))]/25" />
-                {/* oversized ghost numeral as a background watermark */}
-                <span className="pointer-events-none absolute -right-3 -top-8 select-none font-hero text-[9rem] leading-none text-white/[0.035] transition-colors duration-500 group-hover:text-[hsl(var(--accent))]/10">
-                  {c.no}
-                </span>
 
                 <div className="relative">
                   <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(201_96%_42%)] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[hsl(var(--accent))]">
-                    İlke {c.no}
-                  </p>
                   <h3 className="font-hero text-2xl tracking-tight text-white sm:text-[1.75rem]">
                     {c.title}
                   </h3>
