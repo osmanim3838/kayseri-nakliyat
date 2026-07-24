@@ -31,15 +31,16 @@ const reveal = {
   }),
 };
 
-// Numbered manifesto chapters — modern glass cards with accent icons + hover lift.
 export default function Manifesto() {
   return (
     <section
       id="neden-biz"
-      className="relative overflow-hidden border-y border-white/10 bg-[hsl(222_44%_9%)] py-24 sm:py-32"
+      // Arka planı ferahlatıp modern bir degrade geçiş ekledik
+      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-b from-[hsl(222_44%_10%)] via-[hsl(222_47%_12%)] to-[hsl(222_44%_10%)] py-24 sm:py-32"
     >
-      {/* Soft accent glow to add depth behind the cards */}
-      <div className="pointer-events-none absolute -left-40 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-[hsl(217_91%_60%)]/10 blur-[120px]" />
+      {/* Ferahlık katan arkadaki canlı ışık hüzmeleri */}
+      <div className="pointer-events-none absolute -left-40 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-[hsl(217_91%_60%)]/15 blur-[140px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[hsl(201_96%_50%)]/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
@@ -62,7 +63,7 @@ export default function Manifesto() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {CHAPTERS.map((c, i) => {
             const Icon = c.icon;
             return (
@@ -74,20 +75,22 @@ export default function Manifesto() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-60px" }}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[hsl(222_44%_11%)] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[hsl(var(--accent))]/50 sm:p-9"
+                // CAM EFEKTİ: Yarı saydam arka plan, blur ve zarif hover hareketleri
+                className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[hsl(var(--accent))]/60 hover:bg-white/[0.06] hover:shadow-2xl hover:shadow-[hsl(var(--accent))]/10 sm:p-9"
               >
-                {/* hover radial glow in the corner */}
-                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/0 blur-3xl transition-all duration-500 group-hover:bg-[hsl(var(--accent))]/25" />
+                {/* Kart içi köşe parıltı efekti */}
+                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/0 blur-3xl transition-all duration-500 group-hover:bg-[hsl(var(--accent))]/30" />
 
                 <div className="relative">
-                  <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(201_96%_42%)] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
+                  <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(201_96%_42%)] text-white shadow-lg shadow-[hsl(var(--accent))]/30 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </span>
+
                   <h3 className="font-hero text-2xl tracking-tight text-white sm:text-[1.75rem]">
                     {c.title}
                   </h3>
-                  <div className="my-5 h-px w-12 bg-white/15 transition-all duration-500 group-hover:w-24 group-hover:bg-[hsl(var(--accent))]" />
-                  <p className="text-sm leading-relaxed text-white/60">{c.text}</p>
+                  <div className="my-5 h-px w-12 bg-white/20 transition-all duration-500 group-hover:w-24 group-hover:bg-[hsl(var(--accent))]" />
+                  <p className="text-sm leading-relaxed text-white/70">{c.text}</p>
                 </div>
               </motion.article>
             );
