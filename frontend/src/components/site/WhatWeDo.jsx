@@ -3,7 +3,7 @@ import { Package, Truck, ShieldCheck } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Parça Eşya Taşıma",
+    title: "parsel Eşya Taşıma",
     text: "Tek koliden büyük parçaya; eşyanız kadar yer, eşyanız kadar ödeme.",
     img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_kayseri-parcels/artifacts/126muqj3_Gemini_Generated_Image_65zfc065zfc065zf.webp",
     icon: Package,
