@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Phone, MessageCircle, MapPin, ArrowDown, User, Map, Calendar, Package } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/site";
+import { Phone, MessageCircle, MapPin, ArrowDown, User, Map, Calendar, Package, Hexagon } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const HERO_BG = "/resim.jpg";
 
 const LINES = [
-  ["Çankaya", "Şehirler", "Arası"], 
+  ["Arıcıoğlu", "Şehirler", "Arası"], 
   ["Nakliyat", "&", "Ev"],
   ["Taşıma"],
 ];
@@ -37,30 +37,31 @@ export default function Hero() {
 
   return (
     <section ref={ref} id="top" className="relative min-h-[100svh] w-full overflow-hidden">
+      
+      {/* ARKA PLAN: FOTOĞRAF VE BAL PETEĞİ Doku Katmanı */}
       <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 -z-10">
         <img
           src={HERO_BG}
-          alt="Kayseri Parsiyel Nakliyat Asansörlü Taşıma"
+          alt="Arıcıoğlu Nakliyat Asansörlü Taşıma"
           className="h-full w-full object-cover"
         />
         
-        {/* Örnekteki gibi net ve koyu arka plan (Bulanıklık tamamen kaldırıldı) */}
-        <div className="absolute inset-0 bg-slate-950/40" />
-        
-        {/* Yazıların okunması için soldan sağa açılan karanlık gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/10" />
-        
-        {/* Kurumsal hissiyatı artıran ince noktalı doku (Pattern) */}
+        {/* Yazıların okunabilirliği için hafif karanlık derinlik */}
+        <div className="absolute inset-0 bg-slate-950/45" />
+
+        {/* İSTEDİĞİN ÖZEL EFEKT: Bal Peteği Desenli Şeffaf Blur Katmanı */}
         <div 
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-30 mix-blend-overlay backdrop-blur-[2px]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E")`,
-            backgroundSize: '20px 20px'
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='56' height='98' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F59E0B' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '56px 98px'
           }}
         />
+
+        {/* Sol tarafta yazıların arkasında şık bir ışık süzmesi */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/40 to-transparent" />
       </motion.div>
 
-      {/* Ekranı ikiye bölen modern Grid yapısı */}
       <div className="mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 gap-12 px-5 pb-24 pt-32 lg:grid-cols-12 sm:px-8">
         
         {/* SOL TARAF: Yazılar ve Butonlar */}
@@ -70,32 +71,37 @@ export default function Hero() {
             variants={fade}
             initial="hidden"
             animate="show"
-            className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white drop-shadow-md"
+            className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-amber-400 drop-shadow-md"
           >
-            <span className="h-px w-10 bg-primary" />
+            <span className="h-px w-10 bg-amber-400" />
             ANKARA • Türkiye Geneli Sevkiyat
           </motion.p>
           
-          <h1 className="hero-title-shadow drop-shadow-2xl max-w-4xl font-hero text-[10vw] leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-[4.5rem]">
+          <h1 className="hero-title-shadow drop-shadow-2xl max-w-4xl font-hero text-[10vw] leading-[0.95] tracking-tight sm:text-6xl lg:text-[4.5rem]">
             {LINES.map((words, li) => {
               const offset = LINES.slice(0, li).reduce((n, w) => n + w.length, 0);
               return (
-                <span key={li} className="flex flex-wrap gap-x-[0.2em]">
-                  {words.map((word, wi) => (
-                    <span key={word + wi} className="reveal-mask inline-flex">
-                      <motion.span
-                        className={`inline-block ${
-                          word === "&" ? "text-primary font-serif italic font-normal" : "text-white"
-                        }`}
-                        custom={offset + wi}
-                        variants={wordVariants}
-                        initial="hidden"
-                        animate="show"
-                      >
-                        {word}
-                      </motion.span>
-                    </span>
-                  ))}
+                <span key={li} className="flex flex-wrap gap-x-[0.2em] pb-1">
+                  {words.map((word, wi) => {
+                    const isHoney = word === "Arıcıoğlu" || word === "Nakliyat" || word === "&";
+                    return (
+                      <span key={word + wi} className="reveal-mask inline-flex">
+                        <motion.span
+                          className={`inline-block ${
+                            isHoney
+                              ? "bg-gradient-to-b from-amber-200 via-orange-400 to-amber-600 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.4)]"
+                              : "text-white"
+                          } ${word === "&" ? "font-serif italic font-normal" : ""}`}
+                          custom={offset + wi}
+                          variants={wordVariants}
+                          initial="hidden"
+                          animate="show"
+                        >
+                          {word}
+                        </motion.span>
+                      </span>
+                    );
+                  })}
                 </span>
               );
             })}
@@ -106,15 +112,22 @@ export default function Hero() {
             variants={fade}
             initial="hidden"
             animate="show"
-            className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+            className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center"
           >
             <a
-              href={`tel:${PHONE_TEL}`}
+              href="tel:05055979406"
               data-testid="hero-call-btn"
-              className="flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90"
+              className="group relative overflow-hidden flex items-center justify-center gap-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-3 text-sm font-bold text-white shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all hover:scale-105"
             >
-              <Phone className="h-4 w-4" />
-              Hemen Ara: {PHONE_DISPLAY}
+              <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform group-hover:translate-y-0" />
+              <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                <Phone className="h-5 w-5" />
+              </div>
+              <div className="relative z-10 flex flex-col text-left leading-tight">
+                <span className="text-[10px] uppercase tracking-wider text-white/90 mb-0.5">Hemen Ara</span>
+                <span className="text-base font-black">0505 597 94 06</span>
+                <span className="text-[11px] font-bold text-white/90">0312 378 20 10</span>
+              </div>
             </a>
 
             <a
@@ -122,9 +135,9 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-whatsapp-btn"
-              className="flex items-center justify-center gap-3 rounded-full bg-white/10 border border-white/20 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+              className="flex items-center justify-center gap-3 rounded-full bg-white/10 border border-white/25 px-8 py-5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
             >
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-5 w-5 text-emerald-400" />
               WhatsApp
             </a>
           </motion.div>
@@ -134,9 +147,9 @@ export default function Hero() {
             variants={fade}
             initial="hidden"
             animate="show"
-            className="mt-6 flex items-center gap-2 text-sm font-medium text-white/70"
+            className="mt-8 flex items-center gap-2 text-sm font-medium text-white/90"
           >
-            <MapPin className="h-4 w-4 text-primary" />
+            <MapPin className="h-4 w-4 text-amber-500" />
             1986'dan beri — Ankara merkezli profesyonel taşımacılık
           </motion.div>
 
@@ -146,7 +159,7 @@ export default function Hero() {
             variants={fade}
             initial="hidden"
             animate="show"
-            className="mt-10 flex flex-wrap gap-y-6 border-t border-white/15 pt-8"
+            className="mt-12 flex flex-wrap gap-y-6 border-t border-white/20 pt-8"
           >
             {[
               { num: "800K", suffix: "+", label: "MUTLU MÜŞTERİ" },
@@ -155,13 +168,14 @@ export default function Hero() {
             ].map((stat, i) => (
               <div 
                 key={i} 
-                className="flex flex-col border-r border-white/15 pr-6 mr-6 last:border-r-0 last:mr-0 last:pr-0 sm:pr-8 sm:mr-8"
+                className="flex flex-col border-r border-white/20 pr-6 mr-6 last:border-r-0 last:mr-0 last:pr-0 sm:pr-8 sm:mr-8 relative"
               >
                 <span className="font-display text-3xl font-bold text-white sm:text-4xl">
                   {stat.num}
-                  <span className="text-primary">{stat.suffix}</span>
+                  <span className="text-amber-500">{stat.suffix}</span>
                 </span>
-                <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-white/60">
+                <span className="mt-1.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/80">
+                  <Hexagon className="h-3 w-3 text-amber-500" />
                   {stat.label}
                 </span>
               </div>
@@ -169,89 +183,78 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* SAĞ TARAF: Modern Teklif Formu */}
+        {/* SAĞ TARAF: Teklif Formu */}
         <motion.div 
           custom={5}
           variants={fade}
           initial="hidden"
           animate="show"
-          className="flex items-center justify-center lg:col-span-5"
+          className="flex items-center justify-center lg:col-span-5 relative"
         >
-          <div className="w-full rounded-[1.5rem] bg-white p-6 shadow-2xl sm:p-8 relative overflow-hidden">
-            {/* Form Üst Bilgi */}
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <Package className="h-6 w-6 text-primary" />
+          <div className="absolute inset-0 bg-amber-500/15 blur-[60px] -z-10" />
+
+          <div className="w-full rounded-[2rem] border border-white/50 bg-white/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8 relative overflow-hidden">
+            
+            <div className="mb-8 flex items-center gap-4 relative z-10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 border border-amber-200">
+                <Package className="h-6 w-6 text-amber-600" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">Size Özel Taşıma Teklifi</h3>
-                <p className="text-xs text-muted-foreground mt-1">Taşınma detaylarınızı paylaşın, fiyatınızı hemen hazırlayalım.</p>
+                <h3 className="text-xl font-black text-slate-900 tracking-tight">Size Özel Taşıma Teklifi</h3>
+                <p className="text-xs text-slate-500 mt-1 font-medium">Taşınma detaylarınızı paylaşın, fiyatınızı hazırlayalım.</p>
               </div>
             </div>
 
-            {/* Form Alanları (Görsel Arayüz) */}
             <form className="space-y-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Adınız ve Soyadınız *</label>
+                <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Adınız ve Soyadınız *</label>
                 <div className="relative">
-                  <User className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50" />
-                  <input type="text" placeholder="Adınızı yazınız" className="w-full rounded-xl border border-border bg-secondary/40 py-3 pl-10 pr-4 text-sm text-foreground outline-none focus:border-primary focus:bg-white transition-colors" />
+                  <User className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                  <input type="text" placeholder="Adınızı yazınız" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Telefon *</label>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Telefon *</label>
                   <div className="relative">
-                    <Phone className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50" />
-                    <input type="tel" placeholder="05XX XXX XX XX" className="w-full rounded-xl border border-border bg-secondary/40 py-3 pl-10 pr-4 text-sm text-foreground outline-none focus:border-primary focus:bg-white transition-colors" />
+                    <Phone className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="tel" placeholder="05XX XXX XX XX" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Taşınma Tarihi</label>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Taşınma Tarihi</label>
                   <div className="relative">
-                    <Calendar className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50" />
-                    <input type="text" placeholder="GG.AA.YYYY" className="w-full rounded-xl border border-border bg-secondary/40 py-3 pl-10 pr-4 text-sm text-foreground outline-none focus:border-primary focus:bg-white transition-colors" />
+                    <Calendar className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" placeholder="GG.AA.YYYY" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Çıkış Adresi *</label>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Çıkış Adresi *</label>
                   <div className="relative">
-                    <Map className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50" />
-                    <input type="text" placeholder="İl / İlçe" className="w-full rounded-xl border border-border bg-secondary/40 py-3 pl-10 pr-4 text-sm text-foreground outline-none focus:border-primary focus:bg-white transition-colors" />
+                    <Map className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" placeholder="İl / İlçe" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Varış Adresi *</label>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Varış Adresi *</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50" />
-                    <input type="text" placeholder="İl / İlçe" className="w-full rounded-xl border border-border bg-secondary/40 py-3 pl-10 pr-4 text-sm text-foreground outline-none focus:border-primary focus:bg-white transition-colors" />
+                    <MapPin className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" placeholder="İl / İlçe" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                   </div>
                 </div>
               </div>
 
-              <button type="button" className="mt-2 w-full rounded-xl bg-primary py-4 font-bold text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-[0.98]">
+              <button type="button" onClick={() => alert("Teklif talebiniz başarıyla alındı! Müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.")} className="mt-3 w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-4 font-bold text-white shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all active:translate-y-0">
                 Hızlı Teklif Al →
               </button>
             </form>
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/50 sm:flex"
-      >
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Keşfet</span>
-        <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}>
-          <ArrowDown className="h-4 w-4" />
-        </motion.span>
-      </motion.div>
     </section>
   );
 }

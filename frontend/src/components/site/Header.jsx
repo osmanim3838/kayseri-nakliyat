@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 const HOME_LINKS = [
+  { label: "Hakkımızda", href: "#hakkimizda" },
   { label: "Ne Yapıyoruz", href: "#ne-yapiyoruz" },
   { label: "Neden Biz", href: "#neden-biz" },
   { label: "İletişim", href: "#iletisim" },
@@ -43,7 +43,6 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         
-        {/* Logo bileşenini saran div. Eğer Logo.jsx içinde sabit text-white varsa orayı da değiştirmemiz gerekebilir. */}
         <div className={`transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white"}`}>
           <Logo className="text-xl sm:text-2xl" />
         </div>
@@ -91,14 +90,15 @@ export default function Header() {
             </Link>
           )}
           
+          {/* GÜNCELLENEN TELEFON BUTONU (ÇİFT NUMARA) */}
           <a
-            href={`tel:${PHONE_TEL}`}
+            href="tel:05055979406"
             data-testid="header-call-btn"
-            className={`group relative flex items-center gap-3 rounded-full p-1 pr-4 shadow-[0_0_15px_rgba(37,99,235,0.15)] ring-1 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:ring-primary/50 ${
+            className={`group relative flex items-center gap-3 rounded-full p-1 pr-4 shadow-[0_0_15px_rgba(245,158,11,0.15)] ring-1 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(245,158,11,0.3)] hover:ring-primary/50 ${
               scrolled ? "bg-slate-900 ring-slate-800" : "bg-slate-900/40 ring-white/10"
             }`}
           >
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-600 shadow-inner">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-600 shadow-inner">
               <span className="absolute -right-0.5 -top-0.5 flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -106,9 +106,10 @@ export default function Header() {
               <Phone className="h-4 w-4 text-white" />
             </div>
 
-            <div className="flex flex-col">
-              <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-400">7/24 Aktif</span>
-              <span className="text-xs font-black tracking-wide text-white sm:text-sm">{PHONE_DISPLAY}</span>
+            <div className="flex flex-col justify-center leading-tight">
+              <span className="mb-0.5 text-[9px] font-bold uppercase tracking-widest text-emerald-400">7/24 Aktif</span>
+              <span className="text-xs font-black tracking-wide text-white">0505 597 94 06</span>
+              <span className="text-[10px] font-bold tracking-wide text-white/70">0312 378 20 10</span>
             </div>
           </a>
 
@@ -162,17 +163,21 @@ export default function Header() {
                   to="/teklif-al"
                   onClick={() => setOpen(false)}
                   data-testid="mobile-offer-btn"
-                  className="mt-4 flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-bold text-white shadow-lg shadow-primary/20"
+                  className="mt-4 flex items-center justify-center gap-2 rounded-md bg-slate-900 py-3 font-bold text-white shadow-lg shadow-slate-900/20"
                 >
                   Teklif Al
                 </Link>
               )}
+              {/* MOBİL MENÜ ÇİFT NUMARA GÜNCELLEMESİ */}
               <a
-                href={`tel:${PHONE_TEL}`}
+                href="tel:05055979406"
                 data-testid="mobile-call-btn"
-                className="mt-4 flex items-center justify-center gap-2 rounded-md bg-slate-900 py-3 font-bold text-white shadow-lg shadow-slate-900/20"
+                className="mt-3 flex flex-col items-center justify-center gap-1 rounded-md bg-primary py-3 font-bold text-white shadow-lg shadow-primary/20"
               >
-                <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" /> 0505 597 94 06
+                </div>
+                <div className="text-sm opacity-90">0312 378 20 10</div>
               </a>
             </div>
           </motion.nav>

@@ -10,6 +10,7 @@ import Manifesto from "@/components/site/Manifesto";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
+import Hakkimizda from "./components/site/Hakkimizda";
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
       <main>
         <Hero />
         <TrustMarquee />
+        <Hakkimizda />
         <WhatWeDo />
         <Manifesto />
         <Contact />
@@ -65,5 +67,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

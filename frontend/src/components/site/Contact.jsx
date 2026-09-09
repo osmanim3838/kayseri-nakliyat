@@ -34,7 +34,7 @@ export default function Contact() {
             </h2>
             <p className="mt-7 max-w-md text-base leading-[1.7] text-slate-600 sm:text-lg">
               Fiyat almak, sevkiyat planlamak veya sadece bilgi almak için hemen bize ulaşın.
-              Arıcıoğlu&apos;den şehirler arası nakliyat ve ev taşıma hizmetinde,{" "}
+              Arıcıoğlu Nakliyat ile şehirler arası nakliyat ve ev taşıma hizmetinde,{" "}
               <span className="font-semibold text-slate-900">dakikalar içinde net yanıt</span> alırsınız.
             </p>
 
@@ -126,20 +126,29 @@ export default function Contact() {
           </motion.div>
         </div>
         
-        {/* YENİ EKLENEN KISIM: TEKNOLOJİK GÜVENLİK AFİŞİ (TRUST BANNER) */}
+        {/* YENİ EKLENEN KISIM: BAL PETEĞİ VE SICAK IŞIKLI GÜVENLİK AFİŞİ (TRUST BANNER) */}
         <motion.div
           variants={reveal}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative mt-24 overflow-hidden rounded-[2.5rem] bg-[hsl(222_44%_9%)] px-6 py-16 text-center shadow-2xl sm:mt-32 sm:px-16 sm:py-24"
+          className="relative mt-24 overflow-hidden rounded-[2.5rem] bg-slate-950 px-6 py-16 text-center shadow-2xl sm:mt-32 sm:px-16 sm:py-24"
         >
-          {/* Arka plan teknolojik ızgara deseni */}
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]" />
+          {/* 1. BELİRGİN VE CANLI BAL PETEĞİ DESENİ */}
+          <div 
+            className="absolute inset-0 z-0 opacity-15"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F59E0B' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: "40px 70px"
+            }}
+          />
           
-          {/* Köşelerdeki holografik ışık parlamaları */}
-          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[hsl(var(--accent))]/15 blur-[80px]" />
-          <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-orange-500/10 blur-[80px]" />
+          {/* 2. TURUNCUMSU, SICAK BAL RENGİ ARKA PLAN IŞIĞI */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-tr from-slate-950 via-orange-950/60 to-amber-900/30" />
+
+          {/* Köşelerdeki ekstra sıcak ışık parlamaları */}
+          <div className="pointer-events-none absolute -left-20 -top-20 z-0 h-72 w-72 rounded-full bg-amber-500/15 blur-[80px]" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 z-0 h-72 w-72 rounded-full bg-orange-500/15 blur-[80px]" />
 
           <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
             {/* Turuncu Güven Rozeti */}
@@ -150,11 +159,11 @@ export default function Contact() {
             
             {/* Ana Başlık */}
             <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:leading-[1.1]">
-              Eşyalarınız gideceği yere kadar sigortalı, <span className="text-[hsl(var(--accent))]">gününde ve saatinde teslim!</span>
+              Eşyalarınız gideceği yere kadar sigortalı, <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">gününde ve saatinde teslim!</span>
             </h3>
             
             {/* Alt Metin */}
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-400 sm:text-lg">
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
               Kafanızdaki tüm soru işaretlerini ve endişeleri bir kenara bırakın. Arıcıoğlu Nakliyat, her taşımacılık sürecini yasal sigortalar ve resmi taahhütlerle garanti altına alır.
             </p>
           </div>
