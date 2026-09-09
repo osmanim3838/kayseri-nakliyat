@@ -34,7 +34,7 @@ export default function Contact() {
             </h2>
             <p className="mt-7 max-w-md text-base leading-[1.7] text-slate-600 sm:text-lg">
               Fiyat almak, sevkiyat planlamak veya sadece bilgi almak için hemen bize ulaşın.
-              Kayseri&apos;den şehirler arası parça yük ve parça eşya taşımada,{" "}
+              Arıcıoğlu&apos;den şehirler arası nakliyat ve ev taşıma hizmetinde,{" "}
               <span className="font-semibold text-slate-900">dakikalar içinde net yanıt</span> alırsınız.
             </p>
 
@@ -145,17 +145,17 @@ export default function Contact() {
             {/* Turuncu Güven Rozeti */}
             <span className="mb-6 flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-500/25">
               <ShieldCheck className="h-4 w-4" />
-              Kayseri Parsiyel Güvencesi
+              Arıcıoğlu Nakliyat  Güvencesi
             </span>
             
             {/* Ana Başlık */}
             <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:leading-[1.1]">
-              Parsel eşyalarınız gideceği yere kadar sigortalı, <span className="text-[hsl(var(--accent))]">gününde ve saatinde teslim!</span>
+              Eşyalarınız gideceği yere kadar sigortalı, <span className="text-[hsl(var(--accent))]">gününde ve saatinde teslim!</span>
             </h3>
             
             {/* Alt Metin */}
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-400 sm:text-lg">
-              Kafanızdaki tüm soru işaretlerini ve endişeleri bir kenara bırakın. Kayseri Parsiyel, her taşımacılık sürecini yasal sigortalar ve resmi taahhütlerle garanti altına alır.
+              Kafanızdaki tüm soru işaretlerini ve endişeleri bir kenara bırakın. Arıcıoğlu Nakliyat, her taşımacılık sürecini yasal sigortalar ve resmi taahhütlerle garanti altına alır.
             </p>
           </div>
         </motion.div>

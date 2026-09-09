@@ -1,22 +1,23 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { BRAND } from "@/lib/site";
 
 /**
  * CSS-only text logo. Mixes Cabinet Grotesk weights:
- * "kayseri" heavy + "parsiyel" light, with an accent dot to signal a "package/point".
+ * "Arıcıoğlu" heavy + "Nakliyat" light, with an accent dot to signal a "package/point".
  */
 export default function Logo({ className = "", onClick }) {
   return (
-    <a
-      href="#top"
+    <Link
+      to="/"
       onClick={onClick}
       data-testid="brand-logo"
       className={`group inline-flex items-baseline font-display leading-none tracking-tighter ${className}`}
       aria-label={BRAND}
     >
-      <span className="font-black text-white">kayseri</span>
+      <span className="font-black text-white">Arıcıoğlu</span>
       <span className="font-light text-white/70 transition-colors duration-300 group-hover:text-white">
-        parsiyel
+        Nakliyat
       </span>
       <motion.span
         aria-hidden
@@ -24,6 +25,6 @@ export default function Logo({ className = "", onClick }) {
         animate={{ opacity: [1, 0.35, 1] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       />
-    </a>
+    </Link>
   );
 }

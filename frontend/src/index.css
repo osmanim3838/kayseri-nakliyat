@@ -6,27 +6,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Design tokens: forced dark navy theme (Performance Pro / Swiss Brutalist) ---- */
+/* ---- Design tokens: Ferah Beyaz Tema & Turuncu Vurgular ---- */
 :root {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 100%;
-    --card: 222 44% 14%;
-    --card-foreground: 0 0% 100%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 201 96% 40%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 29 92% 52%; /* Turuncu Vurgu */
     --primary-foreground: 0 0% 100%;
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 215 25% 22%;
-    --muted-foreground: 215 20% 72%;
-    --accent: 217 91% 60%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 29 92% 52%; /* Seçimler ve Hover için Turuncu Vurgu */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 215 25% 24%;
-    --input: 215 25% 24%;
-    --ring: 217 91% 60%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 29 92% 52%; /* Turuncu Vurgu */
     --radius: 0.5rem;
     --wa: 142 70% 45%;
 }
@@ -60,7 +60,7 @@ body {
     font-weight: 700;
 }
 
-/* Animated gradient sheen that continuously sweeps across the hero headline */
+/* Animated gradient sheen that continuously sweeps across the hero headline (Beyaz temaya göre ayarlandı) */
 @keyframes hero-sheen {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
@@ -68,11 +68,11 @@ body {
 .hero-gradient-text {
     background-image: linear-gradient(
         100deg,
-        #ffffff 0%,
-        #ffffff 35%,
-        hsl(201 96% 70%) 50%,
-        #ffffff 65%,
-        #ffffff 100%
+        hsl(222 47% 11%) 0%,
+        hsl(222 47% 11%) 35%,
+        hsl(29 92% 52%) 50%,
+        hsl(222 47% 11%) 65%,
+        hsl(222 47% 11%) 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -85,12 +85,10 @@ body {
     .hero-gradient-text { animation: none; }
 }
 
-/* Strong drop-shadow (filter, not text-shadow) so the gradient hero headline
-   keeps contrast/readability over bright photography. Applied on the H1 parent
-   so it survives the per-word animated filters. */
+/* Strong drop-shadow adjusted for light background */
 .hero-title-shadow {
-    filter: drop-shadow(0 2px 14px rgba(2, 6, 23, 0.9))
-        drop-shadow(0 1px 3px rgba(2, 6, 23, 0.7));
+    filter: drop-shadow(0 2px 14px rgba(2, 6, 23, 0.1))
+        drop-shadow(0 1px 3px rgba(2, 6, 23, 0.05));
 }
 
 /* Kinetic hero mask: clips a word/line so its child can slide up on reveal */
@@ -110,12 +108,12 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---- Glassmorphism surface for sticky header + floating UI ---- */
+/* ---- Glassmorphism surface for sticky header + floating UI (Beyaz transparan) ---- */
 .glass {
-    background-color: hsl(222 47% 11% / 0.65);
+    background-color: hsl(0 0% 100% / 0.75);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-color: hsl(0 0% 100% / 0.08);
+    border-color: hsl(222 47% 11% / 0.08);
 }
 
 /* ---- WhatsApp FAB pulsing ring ---- */
@@ -134,20 +132,20 @@ body {
     z-index: -1;
 }
 
-/* ---- Custom selection ---- */
+/* ---- Custom selection (Metin seçildiğinde turuncu arka plan) ---- */
 ::selection {
     background-color: hsl(var(--accent));
     color: #fff;
 }
 
-/* ---- Scrollbar ---- */
+/* ---- Scrollbar (Beyaz temaya uyumlu) ---- */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: hsl(222 47% 9%); }
+::-webkit-scrollbar-track { background: hsl(210 40% 96%); }
 ::-webkit-scrollbar-thumb {
-    background: hsl(215 25% 30%);
+    background: hsl(214 32% 80%);
     border-radius: 999px;
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(217 91% 60%); }
+::-webkit-scrollbar-thumb:hover { background: hsl(29 92% 52%); }
 
 @media (prefers-reduced-motion: reduce) {
     .wa-ring::before { animation: none; }

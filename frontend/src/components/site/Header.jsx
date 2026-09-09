@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-const LINKS = [
+const HOME_LINKS = [
   { label: "Ne Yapıyoruz", href: "#ne-yapiyoruz" },
   { label: "Neden Biz", href: "#neden-biz" },
   { label: "İletişim", href: "#iletisim" },
+  { label: "Teklif Al", to: "/teklif-al" },
+];
+
+const OFFER_LINKS = [
+  { label: "Anasayfa", to: "/" },
+  { label: "İletişim", to: "/#iletisim" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isOfferPage = location.pathname === "/teklif-al";
+  const links = isOfferPage ? OFFER_LINKS : HOME_LINKS;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -28,36 +38,67 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
-        scrolled ? "glass" : "border-transparent bg-transparent"
+        scrolled ? "glass border-border shadow-sm" : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Logo className="text-xl sm:text-2xl" />
+        
+        {/* Logo bileşenini saran div. Eğer Logo.jsx içinde sabit text-white varsa orayı da değiştirmemiz gerekebilir. */}
+        <div className={`transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white"}`}>
+          <Logo className="text-xl sm:text-2xl" />
+        </div>
 
         <nav className="hidden items-center gap-9 md:flex">
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              data-testid={`nav-${l.href.replace("#", "")}`}
-              className="text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href ? (
+              <a
+                key={l.href}
+                href={l.href}
+                data-testid={`nav-${l.href.replace("#", "")}`}
+                className={`text-sm font-bold transition-colors duration-200 ${
+                  scrolled ? "text-foreground/80 hover:text-primary" : "text-white/80 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.to}
+                to={l.to}
+                data-testid={`nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className={`text-sm font-bold transition-colors duration-200 ${
+                  scrolled ? "text-foreground/80 hover:text-primary" : "text-white/80 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
+          {!isOfferPage && (
+            <Link
+              to="/teklif-al"
+              data-testid="header-offer-btn"
+              className={`hidden rounded-full border px-4 py-2 text-sm font-bold transition-colors duration-200 md:inline-flex ${
+                scrolled
+                  ? "border-primary bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/20"
+                  : "border-white/20 bg-white/10 text-white hover:bg-white/20 backdrop-blur-md"
+              }`}
+            >
+              Teklif Al
+            </Link>
+          )}
           
-          {/* YENİ TEKNOLOJİK BUTON: Mobilde görünür, radar sinyalli, katmanlı yapı */}
           <a
             href={`tel:${PHONE_TEL}`}
             data-testid="header-call-btn"
-            className="group relative flex items-center gap-3 rounded-full bg-slate-900/40 p-1 pr-4 shadow-[0_0_15px_rgba(37,99,235,0.15)] ring-1 ring-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-slate-900/80 hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:ring-[hsl(var(--accent))]/50"
+            className={`group relative flex items-center gap-3 rounded-full p-1 pr-4 shadow-[0_0_15px_rgba(37,99,235,0.15)] ring-1 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:ring-primary/50 ${
+              scrolled ? "bg-slate-900 ring-slate-800" : "bg-slate-900/40 ring-white/10"
+            }`}
           >
-            {/* Sol Kısım: İkon ve Sinyal Işığı */}
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[hsl(var(--accent))] to-blue-600 shadow-inner">
-              {/* Online olduğunu belli eden ping (radar) animasyonu */}
+            <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-600 shadow-inner">
               <span className="absolute -right-0.5 -top-0.5 flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -65,7 +106,6 @@ export default function Header() {
               <Phone className="h-4 w-4 text-white" />
             </div>
 
-            {/* Sağ Kısım: 7/24 Etiketi ve Numara */}
             <div className="flex flex-col">
               <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-400">7/24 Aktif</span>
               <span className="text-xs font-black tracking-wide text-white sm:text-sm">{PHONE_DISPLAY}</span>
@@ -75,7 +115,9 @@ export default function Header() {
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/10 bg-black/20 text-white backdrop-blur-sm md:hidden"
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-md border backdrop-blur-sm transition-colors md:hidden ${
+              scrolled ? "border-border bg-secondary text-foreground" : "border-white/10 bg-black/20 text-white"
+            }`}
             aria-label="Menü"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -91,24 +133,44 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="glass overflow-hidden border-t border-white/10 md:hidden"
+            className="glass overflow-hidden border-t border-border bg-white/95 md:hidden"
           >
             <div className="flex flex-col px-5 py-4">
-              {LINKS.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
+              {links.map((l) =>
+                l.href ? (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="border-b border-border/50 py-3 text-base font-bold text-foreground/80 hover:text-primary"
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className="border-b border-border/50 py-3 text-base font-bold text-foreground/80 hover:text-primary"
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
+              {!isOfferPage && (
+                <Link
+                  to="/teklif-al"
                   onClick={() => setOpen(false)}
-                  className="border-b border-white/5 py-3 text-base font-medium text-white/80"
+                  data-testid="mobile-offer-btn"
+                  className="mt-4 flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-bold text-white shadow-lg shadow-primary/20"
                 >
-                  {l.label}
-                </a>
-              ))}
-              {/* Mobil menünün içindeki eski buton da yeni tasarıma uyduruldu */}
+                  Teklif Al
+                </Link>
+              )}
               <a
                 href={`tel:${PHONE_TEL}`}
                 data-testid="mobile-call-btn"
-                className="mt-4 flex items-center justify-center gap-2 rounded-md bg-[hsl(var(--accent))] py-3 font-bold text-white shadow-lg shadow-[hsl(var(--accent))]/20"
+                className="mt-4 flex items-center justify-center gap-2 rounded-md bg-slate-900 py-3 font-bold text-white shadow-lg shadow-slate-900/20"
               >
                 <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
               </a>

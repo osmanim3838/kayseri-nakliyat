@@ -11,7 +11,7 @@ const CHAPTERS = [
   {
     no: "02",
     title: "Hız",
-    text: "Kayseri çıkışlı düzenli seferler ile bekletmeden, zamanında teslim ederiz.",
+    text: "Ankara çıkışlı düzenli seferler ile bekletmeden, zamanında teslim ederiz.",
     icon: Zap,
   },
   {
@@ -35,14 +35,28 @@ export default function Manifesto() {
   return (
     <section
       id="neden-biz"
-      // Arka planı ferahlatıp modern bir degrade geçiş ekledik
-      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-b from-[hsl(222_44%_10%)] via-[hsl(222_47%_12%)] to-[hsl(222_44%_10%)] py-24 sm:py-32"
+      className="relative overflow-hidden bg-slate-50 py-24 sm:py-32"
     >
-      {/* Ferahlık katan arkadaki canlı ışık hüzmeleri */}
-      <div className="pointer-events-none absolute -left-40 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-[hsl(217_91%_60%)]/15 blur-[140px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[hsl(201_96%_50%)]/10 blur-[120px]" />
+      {/* BAL AKMASI (LIQUID BLOB) ANİMASYONLARI */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+        <motion.div
+          animate={{ x: [0, 120, 0], y: [0, -80, 0], scale: [1, 1.15, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -left-[10%] top-[10%] h-[600px] w-[600px] rounded-full bg-gradient-to-br from-amber-300/40 to-orange-500/30 blur-[120px]"
+        />
+        <motion.div
+          animate={{ x: [0, -150, 0], y: [0, 100, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -right-[15%] bottom-[10%] h-[700px] w-[700px] rounded-full bg-gradient-to-tl from-yellow-300/30 to-amber-500/20 blur-[140px]"
+        />
+        <motion.div
+          animate={{ x: [-50, 100, -50], y: [-50, 50, -50] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[30%] top-[40%] h-[400px] w-[400px] rounded-full bg-orange-400/20 blur-[100px]"
+        />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
           variants={reveal}
           initial="hidden"
@@ -50,14 +64,14 @@ export default function Manifesto() {
           viewport={{ once: true }}
           className="mb-16 max-w-3xl"
         >
-          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[hsl(var(--accent))]">
-            <span className="h-px w-10 bg-[hsl(var(--accent))]" />
+          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-px w-10 bg-primary" />
             Neden Biz
           </p>
-          <h2 className="font-hero text-3xl leading-[1.05] tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="font-hero text-3xl leading-[1.05] tracking-tight text-slate-900 sm:text-4xl lg:text-5xl relative">
             Neden bizimle taşıtmalısınız?
             <br className="hidden sm:block" />
-            <span className="mt-2 block bg-gradient-to-r from-white via-[hsl(201_96%_75%)] to-[hsl(var(--accent))] bg-clip-text text-transparent">
+            <span className="mt-2 block bg-gradient-to-r from-slate-700 via-primary to-orange-500 bg-clip-text text-transparent drop-shadow-sm">
               Çünkü işimizi üç net ilkeye indirgedik.
             </span>
           </h2>
@@ -75,22 +89,24 @@ export default function Manifesto() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-60px" }}
-                // CAM EFEKTİ: Yarı saydam arka plan, blur ve zarif hover hareketleri
-                className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[hsl(var(--accent))]/60 hover:bg-white/[0.06] hover:shadow-2xl hover:shadow-[hsl(var(--accent))]/10 sm:p-9"
+                // BEYAZ CAM EFEKTİ: Yarı saydam beyaz arka plan, blur ve zarif hover hareketleri
+                className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/60 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:bg-white/80 hover:shadow-2xl hover:shadow-primary/20 sm:p-9"
               >
-                {/* Kart içi köşe parıltı efekti */}
-                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[hsl(var(--accent))]/0 blur-3xl transition-all duration-500 group-hover:bg-[hsl(var(--accent))]/30" />
+                {/* Kart içi köşe parıltı efekti - Turuncuya uyarlandı */}
+                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/0 blur-3xl transition-all duration-500 group-hover:bg-primary/20" />
 
                 <div className="relative">
-                  <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(201_96%_42%)] text-white shadow-lg shadow-[hsl(var(--accent))]/30 transition-transform duration-300 group-hover:scale-110">
+                  <span className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/30 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </span>
 
-                  <h3 className="font-hero text-2xl tracking-tight text-white sm:text-[1.75rem]">
+                  {/* Başlıklar koyu yapıldı ki beyazda okunsun */}
+                  <h3 className="font-hero text-2xl tracking-tight text-slate-900 sm:text-[1.75rem]">
                     {c.title}
                   </h3>
-                  <div className="my-5 h-px w-12 bg-white/20 transition-all duration-500 group-hover:w-24 group-hover:bg-[hsl(var(--accent))]" />
-                  <p className="text-sm leading-relaxed text-white/70">{c.text}</p>
+                  <div className="my-5 h-px w-12 bg-slate-200 transition-all duration-500 group-hover:w-24 group-hover:bg-primary" />
+                  {/* Açıklama metinleri de aynı şekilde gri/lacivert tonuna çekildi */}
+                  <p className="text-sm leading-relaxed text-slate-600">{c.text}</p>
                 </div>
               </motion.article>
             );

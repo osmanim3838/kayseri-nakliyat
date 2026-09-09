@@ -12,8 +12,8 @@ export default function Footer() {
         <div>
           <Logo className="text-2xl" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-  Kayseri Şehirler Arası parsel Yük & Parsel Eşya Taşıma
-</p>
+            Arıcıoğlu&apos;den şehirler arası nakliyat ve ev taşıma hizmeti.
+          </p>
         </div>
 
         <div className="space-y-3">
@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 px-5 py-6 sm:px-8">
         <p className="mx-auto max-w-7xl text-center text-xs text-white/40 sm:text-left">
-          © {new Date().getFullYear()} kayseriparsiyel — Tüm hakları saklıdır.
+            © {new Date().getFullYear()} Arıcıoğlu nakliyat — Tüm hakları saklıdır.
         </p>
       </div>
     </footer>
