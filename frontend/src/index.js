@@ -21,7 +21,7 @@ root.render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/*" element={<App />} />
           <Route path="/teklif-al" element={<OfferPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

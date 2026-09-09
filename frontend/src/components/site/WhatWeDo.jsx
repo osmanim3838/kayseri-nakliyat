@@ -49,6 +49,14 @@ const reveal = {
 
 function Card({ s, i }) {
   const Icon = s.icon;
+
+  const openDetail = () => {
+    document.getElementById(s.anchor)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <motion.div
       data-testid={s.testid}
@@ -57,7 +65,8 @@ function Card({ s, i }) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className={`group relative min-h-[280px] overflow-hidden rounded-[1.5rem] border border-white/40 bg-white/60 backdrop-blur-md shadow-[0_18px_50px_-30px_rgba(243,130,21,0.15)] transition-transform duration-500 hover:-translate-y-1 ${s.span}`}
+      onClick={openDetail}
+      className={`group relative min-h-[280px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/40 bg-white/60 backdrop-blur-md shadow-[0_18px_50px_-30px_rgba(243,130,21,0.15)] transition-transform duration-500 hover:-translate-y-1 ${s.span}`}
     >
       <img
         src={s.img}
@@ -67,10 +76,10 @@ function Card({ s, i }) {
           "absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
         }
       />
-      
+
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/92 via-slate-900/42 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/40 to-transparent" />
-      
+
       {s.hideWatermark && (
         <div
           className="pointer-events-none absolute bottom-0 right-0 h-32 w-32"
@@ -163,6 +172,7 @@ export default function WhatWeDo() {
             <Card key={s.title} s={s} i={i} />
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import "@/App.css";
 
@@ -11,10 +12,14 @@ import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
 import Hakkimizda from "./components/site/Hakkimizda";
+import IletisimSayfasi from "./components/site/IletisimSayfasi";
+
+// Hizmet Sayfaları
+import HizmetDetay from "./components/site/HizmetDetay";
+import AsansorluNakliyat from "./components/site/AsansorluNakliyat";
 
 function App() {
   useEffect(() => {
-    // Lenis: premium momentum smooth-scrolling. Respect reduced-motion.
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
@@ -31,12 +36,12 @@ function App() {
     };
     rafId = requestAnimationFrame(raf);
 
-    // Smoothly scroll to in-page anchors through Lenis.
     const onClick = (e) => {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const id = a.getAttribute("href");
       if (!id || id === "#") return;
+      if (window.location.pathname !== "/") return;
       const el = document.querySelector(id);
       if (!el) return;
       e.preventDefault();
@@ -53,18 +58,33 @@ function App() {
 
   return (
     <div className="App grain">
-      <Header />
-      <main>
-        <Hero />
-        <TrustMarquee />
-        <Hakkimizda />
-        <WhatWeDo />
-        <Manifesto />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppFab />
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <>
+              <Header />
+              <main>
+                <Hero />
+                <TrustMarquee />
+                <Hakkimizda />
+                <WhatWeDo />
+                <Manifesto />
+                <Contact />
+              </main>
+              <Footer />
+              <WhatsAppFab />
+            </>
+          } 
+        />
+        
+        {/* YENİ OLUŞTURDUĞUMUZ İKİ SAYFANIN BAĞLANTILARI */}
+        <Route path="/cankiri-evden-eve-nakliyat" element={<HizmetDetay />} />
+        <Route path="/cankiri-asansorlu-nakliyat" element={<AsansorluNakliyat />} />
+        <Route path="/iletisim" element={<IletisimSayfasi />} />
+      </Routes>
     </div>
   );
 }
+
 export default App;
