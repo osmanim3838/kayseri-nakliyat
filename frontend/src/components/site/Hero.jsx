@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Phone, MessageCircle, MapPin, ArrowDown, User, Map, Calendar, Package, Hexagon } from "lucide-react";
+import { Phone, MessageCircle, MapPin, User, Map, Calendar, Package, Hexagon } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
 
 const HERO_BG = "/resim.jpg";
@@ -107,6 +107,17 @@ export default function Hero() {
             })}
           </h1>
 
+          {/* İŞTE BURASI: YENİ EKLENEN AÇIKLAMA METNİ */}
+        <motion.p
+  custom={1}
+  variants={fade}
+  initial="hidden"
+  animate="show"
+  className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-slate-300 drop-shadow-md"
+>
+            Yarım asra yaklaşan Çankaya ve Dikmen Merkezli deneyimimizle nakliyat süreçlerinizi baştan sona profesyonellikle planlıyoruz. Gelişmiş asansör sistemlerimiz, uzman ambalajlama ekibimiz ve sigortalı altyapımızla eşyalarınızı değil, güven taşıyoruz.
+          </motion.p>
+
           <motion.div
             custom={2}
             variants={fade}
@@ -150,7 +161,7 @@ export default function Hero() {
             className="mt-8 flex items-center gap-2 text-sm font-medium text-white/90"
           >
             <MapPin className="h-4 w-4 text-amber-500" />
-            1986'dan beri — Ankara merkezli profesyonel taşımacılık
+            1986'dan beri — Çankaya ve Dikmen merkezli profesyonel taşımacılık
           </motion.div>
 
           {/* İSTATİSTİKLER */}

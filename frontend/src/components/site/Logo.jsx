@@ -11,7 +11,7 @@ export default function Logo({ className = "", onClick }) {
       aria-label={BRAND}
     >
       <img
-        src="/logo.svg"
+        src="/logo.png"
         alt={BRAND}
         className="h-12 w-auto object-contain sm:h-14"
       />
