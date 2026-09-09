@@ -100,4 +100,4 @@ export default function IletisimSayfasi() {
       <WhatsAppFab />
     </div>
   );
-}s
+}
