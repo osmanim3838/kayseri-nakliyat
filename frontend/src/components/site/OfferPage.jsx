@@ -41,8 +41,8 @@ export default function OfferPage() {
     toFloor: "Giriş / Zemin Kat",
     elevatorFrom: true,
     elevatorTo: true,
-    fromCity: "Kayseri",
-    toCity: "İstanbul",
+    fromCity: "Çankaya",
+    toCity: "Dikmen",
     distance: 750,
     services: ["montaj"],
   });
@@ -264,7 +264,7 @@ export default function OfferPage() {
                             data-testid="offer-from-city"
                             value={form.fromCity}
                             onChange={(event) => setForm((current) => ({ ...current, fromCity: event.target.value }))}
-                            placeholder="Örn. Kayseri / Melikgazi"
+                            placeholder="Örn. Ankara / Çankaya"
                             className="w-full rounded-2xl border border-border bg-white px-4 py-3 font-normal text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary shadow-sm"
                           />
                         </label>
@@ -286,7 +286,7 @@ export default function OfferPage() {
                             data-testid="offer-to-city"
                             value={form.toCity}
                             onChange={(event) => setForm((current) => ({ ...current, toCity: event.target.value }))}
-                            placeholder="Örn. İstanbul / Kadıköy"
+                            placeholder="Örn. DİKMEN / ÇANKAYA"
                             className="w-full rounded-2xl border border-border bg-white px-4 py-3 font-normal text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary shadow-sm"
                           />
                         </label>
@@ -426,7 +426,7 @@ export default function OfferPage() {
                   <div className="mt-6 rounded-[1.25rem] border border-border bg-white p-5 shadow-sm">
                     <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
                       <MapPinned className="h-4 w-4 text-primary" />
-                      Kayseri merkezli taşımacılık
+                      Ankara merkezli taşımacılık
                     </div>
                     <p className="mt-3 text-sm leading-7 text-muted-foreground">
                       Bu form, müşterinin teklif talebini adım adım toplar. Hesap makinesi gibi çalışmaz; doğrudan iletişim ve planlama için hazırlanmıştır.
