@@ -30,7 +30,7 @@ export default function AsansorluNakliyat() {
           </div>
           
           <h1 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">
-            Çankırı Asansörlü <span className="text-amber-500">Nakliyat</span>
+            Çankaya Asansörlü <span className="text-amber-500">Nakliyat</span>
           </h1>
           
           <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -58,7 +58,7 @@ export default function AsansorluNakliyat() {
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <h2 className="mb-6 font-display text-2xl font-bold text-slate-900 sm:text-3xl">Yüksek Katlara Hızlı ve Güvenli Taşıma Çözümleri</h2>
             <p>
-              Taşınma süreci her zaman zorlu bir deneyim olmuştur, ancak teknolojinin nakliyat sektörüne entegre olmasıyla birlikte bu zorluklar büyük ölçüde aşılmıştır. Özellikle yüksek katlı binaların ve dar merdiven boşluklarının taşınmayı bir kabusa dönüştürdüğü durumlarda, <strong className="border-b-2 border-amber-500 text-slate-900">Çankırı asansörlü nakliyat hizmetlerimiz</strong> hayat kurtarıcı bir çözüm sunmaktadır. Eşyalarınızın bina içindeki merdivenlerde duvarlara çarpma, çizilme veya kırılma riskini tamamen ortadan kaldıran bu modüler sistem, taşımacılıkta <strong className="text-amber-600">yeni bir standart belirlemektedir</strong>. Uzman kadromuz ve modern dış cephe asansörlerimizle, Çankırı'nın her noktasına kusursuz bir taşınma deneyimi vadediyoruz.
+              Taşınma süreci her zaman zorlu bir deneyim olmuştur, ancak teknolojinin nakliyat sektörüne entegre olmasıyla birlikte bu zorluklar büyük ölçüde aşılmıştır. Özellikle yüksek katlı binaların ve dar merdiven boşluklarının taşınmayı bir kabusa dönüştürdüğü durumlarda, <strong className="border-b-2 border-amber-500 text-slate-900">Çankaya asansörlü nakliyat hizmetlerimiz</strong> hayat kurtarıcı bir çözüm sunmaktadır. Eşyalarınızın bina içindeki merdivenlerde duvarlara çarpma, çizilme veya kırılma riskini tamamen ortadan kaldıran bu modüler sistem, taşımacılıkta <strong className="text-amber-600">yeni bir standart belirlemektedir</strong>. Uzman kadromuz ve modern dış cephe asansörlerimizle, Çankaya'nın her noktasına kusursuz bir taşınma deneyimi vadediyoruz.
             </p>
           </motion.div>
 
@@ -68,9 +68,9 @@ export default function AsansorluNakliyat() {
           </motion.div>
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <h2 className="mb-6 font-display text-2xl font-bold text-slate-900 sm:text-3xl">Neden Çankırı Asansörlü Taşımacılık Tercih Edilmeli?</h2>
+            <h2 className="mb-6 font-display text-2xl font-bold text-slate-900 sm:text-3xl">Neden Çankaya Asansörlü Taşımacılık Tercih Edilmeli?</h2>
             <p>
-              Asansörlü taşımacılığın en büyük avantajı hiç şüphesiz <strong className="text-amber-600">maksimum eşya güvenliğidir</strong>. İnsan gücüne dayalı klasik taşıma yöntemlerinde, ağır mobilyaların veya hassas beyaz eşyaların dar alanlardan geçirilmesi ciddi hasar riskleri taşır. Ancak Çankırı asansörlü taşıma sistemlerimiz sayesinde, eşyalarınız <strong className="border-b-2 border-amber-500 text-slate-900">doğrudan evinizin balkonundan veya geniş bir penceresinden özel asansör kabinine yüklenir</strong>. Sarsıntısız bir şekilde aşağıya indirilerek nakliye aracımıza doğrudan yerleştirilir. Bu yöntem sadece eşyalarınızı korumakla kalmaz; aynı zamanda bina içi duvarların çizilmesini ve komşularınıza verilebilecek olası gürültü rahatsızlıklarını da engeller. Ayrıca taşıma süresini neredeyse yarı yarıya düşürerek size büyük bir zaman tasarrufu sağlar.
+              Asansörlü taşımacılığın en büyük avantajı hiç şüphesiz <strong className="text-amber-600">maksimum eşya güvenliğidir</strong>. İnsan gücüne dayalı klasik taşıma yöntemlerinde, ağır mobilyaların veya hassas beyaz eşyaların dar alanlardan geçirilmesi ciddi hasar riskleri taşır. Ancak Çankayarı asansörlü taşıma sistemlerimiz sayesinde, eşyalarınız <strong className="border-b-2 border-amber-500 text-slate-900">doğrudan evinizin balkonundan veya geniş bir penceresinden özel asansör kabinine yüklenir</strong>. Sarsıntısız bir şekilde aşağıya indirilerek nakliye aracımıza doğrudan yerleştirilir. Bu yöntem sadece eşyalarınızı korumakla kalmaz; aynı zamanda bina içi duvarların çizilmesini ve komşularınıza verilebilecek olası gürültü rahatsızlıklarını da engeller. Ayrıca taşıma süresini neredeyse yarı yarıya düşürerek size büyük bir zaman tasarrufu sağlar.
             </p>
           </motion.div>
 

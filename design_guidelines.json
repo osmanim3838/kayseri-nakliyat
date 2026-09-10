@@ -58,8 +58,8 @@
     "whatsapp_fab": "Fixed bottom-right corner, vibrant WhatsApp green or brand accent, with a pulsing ring animation."
   },
   "sections_instructions": {
-    "hero": "Large kinetic hero. Background image heavily darkened (bg-slate-950/70) so text is 100% readable. H1: 'Kayseri Şehirler Arası Parça Yük Taşıma'. Prominent Phone CTA and WhatsApp CTA.",
-    "marquee": "Infinite scrolling marquee displaying trust signals (e.g., 'GÜVENLİ TESLİMAT • SİGORTALI TAŞIMACILIK • ZAMANINDA TESLİM').",
+    "hero": "Large kinetic hero. Background image heavily darkened (bg-slate-950/70) so text is 100% readable. H1: 'çankaya Şehirler Arası Parça Yük Taşıma'. Prominent Phone CTA and WhatsApp CTA.",
+    "marquee": "Infinite scrolling marquee displaying trust signals (e.g., 'Dikmen Nakliyat • SİGORTALI TAŞIMACILIK • ZAMANINDA TESLİM').",
     "what_we_do": "Grid of 3-4 clipped photography cards focusing on partial load transport. Short, punchy text. Asymmetrical layout.",
     "manifesto": "Numbered trust chapters (e.g., 01. Güven, 02. Hız). Use overlapping typography and negative space.",
     "contact": "Footer/Contact section combining persuasive text, prominent phone number (0533 127 55 00), and a modern styled Google Maps iframe for the address."

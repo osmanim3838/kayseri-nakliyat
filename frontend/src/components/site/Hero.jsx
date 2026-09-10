@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Phone, MessageCircle, MapPin, User, Map, Calendar, Package, Hexagon } from "lucide-react";
+import { Phone, MessageCircle, MapPin, User, Map, Calendar, Package, Hexagon, Mail, ChevronDown, ShieldCheck, Truck, Home } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
 
 const HERO_BG = "/resim.jpg";
@@ -38,18 +38,16 @@ export default function Hero() {
   return (
     <section ref={ref} id="top" className="relative min-h-[100svh] w-full overflow-hidden">
       
-      {/* ARKA PLAN: FOTOĞRAF VE BAL PETEĞİ Doku Katmanı */}
+      {/* ARKA PLAN */}
       <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 -z-10">
-        <img
-          src={HERO_BG}
-          alt="Arıcıoğlu Nakliyat Asansörlü Taşıma"
-          className="h-full w-full object-cover"
-        />
-        
-        {/* Yazıların okunabilirliği için hafif karanlık derinlik */}
+       <img
+  src={HERO_BG}
+  alt="Arıcıoğlu Nakliyat Asansörlü Taşıma"
+  className="h-full w-full object-cover"
+  /* style kodu ile resmin tam olarak %85 sağ tarafına (asansörün olduğu yere) odaklanmasını zorunlu kıldık */
+  style={{ objectPosition: "85% center" }} 
+/>
         <div className="absolute inset-0 bg-slate-950/45" />
-
-        {/* İSTEDİĞİN ÖZEL EFEKT: Bal Peteği Desenli Şeffaf Blur Katmanı */}
         <div 
           className="absolute inset-0 opacity-30 mix-blend-overlay backdrop-blur-[2px]"
           style={{
@@ -57,14 +55,12 @@ export default function Hero() {
             backgroundSize: '56px 98px'
           }}
         />
-
-        {/* Sol tarafta yazıların arkasında şık bir ışık süzmesi */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/40 to-transparent" />
       </motion.div>
 
       <div className="mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 gap-12 px-5 pb-24 pt-32 lg:grid-cols-12 sm:px-8">
         
-        {/* SOL TARAF: Yazılar ve Butonlar */}
+        {/* SOL TARAF */}
         <div className="flex flex-col justify-center lg:col-span-7">
           <motion.p
             custom={0}
@@ -107,15 +103,14 @@ export default function Hero() {
             })}
           </h1>
 
-          {/* İŞTE BURASI: YENİ EKLENEN AÇIKLAMA METNİ */}
-        <motion.p
-  custom={1}
-  variants={fade}
-  initial="hidden"
-  animate="show"
-  className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-slate-300 drop-shadow-md"
->
-            Yarım asra yaklaşan Çankaya ve Dikmen Merkezli deneyimimizle nakliyat süreçlerinizi baştan sona profesyonellikle planlıyoruz. Gelişmiş asansör sistemlerimiz, uzman ambalajlama ekibimiz ve sigortalı altyapımızla eşyalarınızı değil, güven taşıyoruz.
+          <motion.p
+            custom={1}
+            variants={fade}
+            initial="hidden"
+            animate="show"
+            className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-slate-300 drop-shadow-md"
+          >
+            Yarım asra yaklaşan Çankaya ve Dikmen merkezli deneyimimizle nakliyat süreçlerinizi baştan sona profesyonellikle planlıyoruz. Gelişmiş asansör sistemlerimiz, uzman ambalajlama ekibimiz ve sigortalı altyapımızla eşyalarınızı değil, güven taşıyoruz.
           </motion.p>
 
           <motion.div
@@ -194,7 +189,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* SAĞ TARAF: Teklif Formu */}
+        {/* SAĞ TARAF: GÜNCELLENMİŞ DETAYLI TEKLİF FORMU */}
         <motion.div 
           custom={5}
           variants={fade}
@@ -207,24 +202,26 @@ export default function Hero() {
           <div className="w-full rounded-[2rem] border border-white/50 bg-white/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8 relative overflow-hidden">
             
             <div className="mb-8 flex items-center gap-4 relative z-10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 border border-amber-200">
-                <Package className="h-6 w-6 text-amber-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500 shadow-lg shadow-amber-500/20">
+                <Truck className="h-6 w-6 text-slate-900" />
               </div>
               <div>
                 <h3 className="text-xl font-black text-slate-900 tracking-tight">Size Özel Taşıma Teklifi</h3>
-                <p className="text-xs text-slate-500 mt-1 font-medium">Taşınma detaylarınızı paylaşın, fiyatınızı hazırlayalım.</p>
+                <p className="text-xs text-slate-500 mt-1 font-medium">Taşınma detaylarınızı paylaşın, fiyatınızı hemen hazırlayalım.</p>
               </div>
             </div>
 
             <form className="space-y-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
+              {/* Satır 1: Ad Soyad */}
               <div>
                 <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Adınız ve Soyadınız *</label>
                 <div className="relative">
                   <User className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                  <input type="text" placeholder="Adınızı yazınız" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
+                  <input type="text" placeholder="Adınızı ve soyadınızı yazınız" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                 </div>
               </div>
 
+              {/* Satır 2: Telefon ve E-Posta */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Telefon *</label>
@@ -234,14 +231,15 @@ export default function Hero() {
                   </div>
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Taşınma Tarihi</label>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">E-Posta *</label>
                   <div className="relative">
-                    <Calendar className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                    <input type="text" placeholder="GG.AA.YYYY" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
+                    <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="email" placeholder="ornek@eposta.com" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
                   </div>
                 </div>
               </div>
 
+              {/* Satır 3: Çıkış ve Varış Adresi */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Çıkış Adresi *</label>
@@ -259,9 +257,42 @@ export default function Hero() {
                 </div>
               </div>
 
-              <button type="button" onClick={() => alert("Teklif talebiniz başarıyla alındı! Müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.")} className="mt-3 w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-4 font-bold text-white shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all active:translate-y-0">
+              {/* Satır 4: Taşınma Tarihi ve Taşınacak Yer (Açılır Menü) */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Taşınma Tarihi</label>
+                  <div className="relative">
+                    <Calendar className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" placeholder="GG.AA.YYYY" className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-4 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all" />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Taşınacak Yer</label>
+                  <div className="relative">
+                    <Home className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <select className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50/50 py-3 pl-10 pr-10 text-sm text-slate-900 outline-none focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-500/10 transition-all cursor-pointer">
+                      <option value="1+1">1+1 Daire</option>
+                      <option value="2+1" selected>2+1 Daire</option>
+                      <option value="3+1">3+1 Daire</option>
+                      <option value="4+1">4+1 veya daha büyük</option>
+                      <option value="ofis">Ofis / İş Yeri</option>
+                      <option value="parca">Parça Eşya</option>
+                    </select>
+                    <ChevronDown className="absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Buton */}
+              <button type="button" onClick={() => alert("Teklif talebiniz başarıyla alındı! Müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.")} className="mt-4 w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-4 font-bold text-white shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all active:translate-y-0">
                 Hızlı Teklif Al →
               </button>
+
+              {/* Alt Bilgi / Güven Rozetleri */}
+              <div className="mt-5 flex items-center justify-center gap-1.5 text-[10px] font-semibold text-slate-500">
+                <ShieldCheck className="h-4 w-4 text-emerald-500" />
+                <span>Ücretsiz keşif · Sabit fiyat garantisi · Sürpriz ek ücret yok</span>
+              </div>
             </form>
           </div>
         </motion.div>

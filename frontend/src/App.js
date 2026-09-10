@@ -13,10 +13,15 @@ import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
 import Hakkimizda from "./components/site/Hakkimizda";
 import IletisimSayfasi from "./components/site/IletisimSayfasi";
+import CankayaSehirlerarasi from "./components/site/CankayaSehirlerarasi";
 
 // Hizmet Sayfaları
 import HizmetDetay from "./components/site/HizmetDetay";
 import AsansorluNakliyat from "./components/site/AsansorluNakliyat";
+
+// YENİ EKLENEN SEO BİLEŞENLERİ
+import FAQ from "./components/site/FAQ";
+import Testimonials from "./components/site/Testimonials";
 
 function App() {
   useEffect(() => {
@@ -70,6 +75,11 @@ function App() {
                 <Hakkimizda />
                 <WhatWeDo />
                 <Manifesto />
+                
+                {/* YENİ BÖLÜMLERİ BURAYA, İLETİŞİMİN HEMEN ÜSTÜNE EKLEDİK */}
+                <Testimonials />
+                <FAQ />
+                
                 <Contact />
               </main>
               <Footer />
@@ -79,9 +89,11 @@ function App() {
         />
         
         {/* YENİ OLUŞTURDUĞUMUZ İKİ SAYFANIN BAĞLANTILARI */}
-        <Route path="/cankiri-evden-eve-nakliyat" element={<HizmetDetay />} />
-        <Route path="/cankiri-asansorlu-nakliyat" element={<AsansorluNakliyat />} />
+        <Route path="/cankaya-evden-eve-nakliyat" element={<HizmetDetay />} />
+        <Route path="/dikmen-asansorlu-nakliyat" element={<AsansorluNakliyat />} />
+        
         <Route path="/iletisim" element={<IletisimSayfasi />} />
+        <Route path="/cankaya-sehirler-arasi-nakliyat" element={<CankayaSehirlerarasi />} />
       </Routes>
     </div>
   );

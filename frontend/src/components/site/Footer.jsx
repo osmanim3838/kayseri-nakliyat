@@ -1,21 +1,53 @@
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { 
   MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight, 
   Package, User, Calendar, ArrowRight 
 } from "lucide-react";
 
+const FOOTER_LINKS = [
+  { label: "Ana Sayfa", path: "/" },
+  { label: "Kurumsal", path: "/#hakkimizda" },
+  { label: "Çankaya Evden Eve Nakliyat", path: "/cankaya-evden-eve-nakliyat" },
+  { label: "Dikmen Asansörlü Nakliyat", path: "/dikmen-asansorlu-nakliyat" },
+  { label: "Çankaya Şehirler Arası Nakliyat", path: "/cankaya-sehirler-arasi-nakliyat" },
+  { label: "İletişim", path: "/iletisim" }
+];
+
 export default function Footer() {
-  
-  // Form çalıştığında ekrana çıkacak mesaj
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleQuoteSubmit = (e) => {
     e.preventDefault();
     alert("Teklif talebiniz başarıyla alındı! Müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.");
   };
 
+  const handleFooterLink = (e, path) => {
+    e.preventDefault();
+    
+    if (!path.includes("#")) {
+      navigate(path);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const targetId = path.split("#")[1];
+    
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="relative overflow-hidden bg-slate-950 pt-20 pb-10 text-slate-200">
       
-      {/* 1. BELİRGİN VE CANLI BAL PETEĞİ DESENİ */}
       <div 
         className="absolute inset-0 z-0 opacity-15"
         style={{
@@ -24,21 +56,18 @@ export default function Footer() {
         }}
       />
       
-      {/* 2. TURUNCUMSU, SICAK BAL RENGİ ARKA PLAN IŞIĞI */}
       <div className="absolute inset-0 z-0 bg-gradient-to-tr from-slate-950 via-orange-950/60 to-amber-900/30" />
 
-      {/* İÇERİK KISMI (12 Kolonluk Izgara Sistemi) */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           
-          {/* Sütun 1: Logo ve Hakkımızda (3 Kolon) */}
           <div className="flex flex-col lg:col-span-3">
-            <Link to="/" className="flex items-baseline font-display text-3xl tracking-tighter drop-shadow-lg">
+            <a href="/" onClick={(e) => handleFooterLink(e, "/")} className="flex cursor-pointer items-baseline font-display text-3xl tracking-tighter drop-shadow-lg">
               <span className="font-black text-white">Arıcıoğlu</span>
-              <span className="font-light text-primary">Nakliyat</span>
-              <span className="ml-1 h-2 w-2 rounded-full bg-primary" />
-            </Link>
+              <span className="font-light text-amber-500">Nakliyat</span>
+              <span className="ml-1 h-2 w-2 rounded-full bg-amber-500" />
+            </a>
             <p className="mt-6 text-sm leading-relaxed text-slate-300">
               Arıcıoğlu Nakliyat bünyesinde 35 yılı aşkın tecrübeyle Ankara ve Türkiye genelinde sigortalı evden eve nakliyat, asansörlü taşımacılık ve depolama hizmetleri.
             </p>
@@ -48,25 +77,27 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Sütun 2: Hızlı Bağlantılar (2 Kolon) */}
-          <div className="lg:col-span-2 lg:ml-4">
+          <div className="lg:col-span-3 lg:ml-4">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white drop-shadow-md">
               Hızlı Bağlantılar
             </h3>
             <ul className="flex flex-col gap-3">
-              {["Ana Sayfa", "Kurumsal", "Hizmetlerimiz", "İletişim"].map((item, i) => (
+              {FOOTER_LINKS.map((item, i) => (
                 <li key={i}>
-                  <Link to="/" className="group flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-amber-400">
+                  <a 
+                    href={item.path} 
+                    onClick={(e) => handleFooterLink(e, item.path)}
+                    className="group flex cursor-pointer items-center gap-2 text-sm text-slate-300 transition-colors hover:text-amber-400"
+                  >
                     <ChevronRight className="h-3 w-3 text-amber-600 transition-transform group-hover:translate-x-1" strokeWidth={3} />
-                    {item}
-                  </Link>
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Sütun 3: İletişim Bilgileri (3 Kolon) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white drop-shadow-md">
               İletişim
             </h3>
@@ -94,21 +125,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Sütun 4: BEYAZ TEKLİF FORMU (4 Kolon) */}
           <div className="lg:col-span-4">
             <div className="rounded-2xl bg-white p-6 shadow-2xl shadow-orange-900/40">
-              {/* Form Başlığı */}
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
                   <Package className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="text-lg font-black tracking-tight text-slate-900">Size Özel Taşıma Teklifi</h4>
-                  <p className="text-xs text-slate-500 mt-0.5">Taşınma detaylarınızı paylaşın, fiyatınızı hemen hazırlayalım.</p>
+                  <p className="mt-0.5 text-xs text-slate-500">Taşınma detaylarınızı paylaşın, fiyatınızı hemen hazırlayalım.</p>
                 </div>
               </div>
 
-              {/* Form Alanları */}
               <form onSubmit={handleQuoteSubmit} className="flex flex-col gap-4">
                 <div>
                   <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-wider text-slate-500">Adınız ve Soyadınız *</label>
@@ -161,14 +189,13 @@ export default function Footer() {
 
         </div>
 
-        {/* ALT ÇİZGİ VE TELİF HAKKI */}
         <div className="mt-16 flex flex-col items-center justify-between border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-slate-400">
             © {new Date().getFullYear()} Arıcıoğlu Nakliyat — Tüm hakları saklıdır.
           </p>
           <div className="mt-4 flex gap-4 sm:mt-0">
-            <Link to="/" className="text-xs text-slate-400 transition-colors hover:text-amber-400">Gizlilik Politikası</Link>
-            <Link to="/" className="text-xs text-slate-400 transition-colors hover:text-amber-400">Kullanım Şartları</Link>
+            <a href="/" onClick={(e) => handleFooterLink(e, "/")} className="cursor-pointer text-xs text-slate-400 transition-colors hover:text-amber-400">Gizlilik Politikası</a>
+            <a href="/" onClick={(e) => handleFooterLink(e, "/")} className="cursor-pointer text-xs text-slate-400 transition-colors hover:text-amber-400">Kullanım Şartları</a>
           </div>
         </div>
 

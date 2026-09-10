@@ -30,7 +30,7 @@ export default function HizmetDetay() {
           </div>
           
           <h1 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]">
-            Çankırı Evden Eve <span className="text-amber-500">Nakliyat</span>
+            Çankaya Evden Eve <span className="text-amber-500">Nakliyat</span>
           </h1>
           
           <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -72,7 +72,7 @@ export default function HizmetDetay() {
           {/* Paragraf 2 */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <p>
-              Çankırı, hem tarihi dokusu hem de gelişen coğrafyasıyla sürekli bir dinamizm içerisindedir. Bu dinamizm, şehir içi ve şehir dışı göç hareketliliğini de beraberinde getirmektedir. Çankırı'nın Ilgaz, Çerkeş, Şabanözü, Kurşunlu ve diğer tüm ilçelerinde sunduğumuz evden eve nakliyat hizmetleri, bölgenin coğrafi yapısına ve binaların mimari özelliklerine uygun olarak şekillendirilmektedir. Dar sokaklar, yüksek katlı binalar veya asansörü bulunmayan apartmanlar artık taşınmak için bir engel veya stres kaynağı olmaktan çıkmıştır. Geniş araç filomuz ve <strong className="border-b-2 border-amber-500 text-slate-900">teknolojik asansör sistemlerimizle</strong> her türlü zorluğun üstesinden kolayca geliyoruz. Eşyalarınızın sadece maddi değil, manevi değerinin de bilincinde olarak, her bir parçayı kendi eşyamız gibi benimsiyor ve taşıyoruz. Profesyonel taşıma çözümlerimiz, yalnızca eşyaların bir yerden başka bir yere transferini değil, aynı zamanda <strong className="text-amber-600">güven, hız ve şeffaflığı da içermektedir</strong>.
+              Çankaya, hem tarihi dokusu hem de gelişen coğrafyasıyla sürekli bir dinamizm içerisindedir. Bu dinamizm, şehir içi ve şehir dışı göç hareketliliğini de beraberinde getirmektedir. Çankaya'nın Ilgaz, Çerkeş, Şabanözü, Kurşunlu ve diğer tüm ilçelerinde sunduğumuz evden eve nakliyat hizmetleri, bölgenin coğrafi yapısına ve binaların mimari özelliklerine uygun olarak şekillendirilmektedir. Dar sokaklar, yüksek katlı binalar veya asansörü bulunmayan apartmanlar artık taşınmak için bir engel veya stres kaynağı olmaktan çıkmıştır. Geniş araç filomuz ve <strong className="border-b-2 border-amber-500 text-slate-900">teknolojik asansör sistemlerimizle</strong> her türlü zorluğun üstesinden kolayca geliyoruz. Eşyalarınızın sadece maddi değil, manevi değerinin de bilincinde olarak, her bir parçayı kendi eşyamız gibi benimsiyor ve taşıyoruz. Profesyonel taşıma çözümlerimiz, yalnızca eşyaların bir yerden başka bir yere transferini değil, aynı zamanda <strong className="text-amber-600">güven, hız ve şeffaflığı da içermektedir</strong>.
             </p>
           </motion.div>
 
