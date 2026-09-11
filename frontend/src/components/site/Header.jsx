@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom"; // useLocation ekle
 import Logo from "./Logo";
 
 const LINKS = [
-  { label: "Hakkımızda", href: "/#hakkimizda" },
+  { label: "Hakkımızda", to: "/hakkimizda" },
   { 
     label: "Hizmetlerimiz", 
     subLinks: [

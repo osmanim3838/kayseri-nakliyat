@@ -148,7 +148,7 @@ export default function CankayaSehirlerarasi() {
                 <a href="tel:05055979406" className="rounded-xl bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-md transition-transform hover:scale-105">
                   Hemen Ara: 0505 597 94 06
                 </a>
-                <Link to="/iletisim" className="rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-md transition-transform hover:scale-105">
+                <Link to="/teklif-al" className="rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-md transition-transform hover:scale-105">
                   Teklif Al <ArrowRight className="inline h-4 w-4 ml-1" />
                 </Link>
               </div>

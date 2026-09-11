@@ -12,12 +12,14 @@ import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
 import Hakkimizda from "./components/site/Hakkimizda";
+import HakkimizdaSayfasi from './components/site/HakkimizdaSayfasi';
 import IletisimSayfasi from "./components/site/IletisimSayfasi";
 import CankayaSehirlerarasi from "./components/site/CankayaSehirlerarasi";
 
 // Hizmet Sayfaları
 import HizmetDetay from "./components/site/HizmetDetay";
 import AsansorluNakliyat from "./components/site/AsansorluNakliyat";
+import OfferPage from "./components/site/OfferPage";
 
 // YENİ EKLENEN SEO BİLEŞENLERİ
 import FAQ from "./components/site/FAQ";
@@ -45,12 +47,17 @@ function App() {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const id = a.getAttribute("href");
-      if (!id || id === "#") return;
+      if (!id || id === "#" || id.startsWith("#/")) return;
       if (window.location.pathname !== "/") return;
-      const el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el, { offset: -70 });
+      
+      try {
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        lenis.scrollTo(el, { offset: -70 });
+      } catch (error) {
+        console.warn("Geçersiz seçici:", id);
+      }
     };
     document.addEventListener("click", onClick);
 
@@ -93,7 +100,9 @@ function App() {
         <Route path="/dikmen-asansorlu-nakliyat" element={<AsansorluNakliyat />} />
         
         <Route path="/iletisim" element={<IletisimSayfasi />} />
+        <Route path="/teklif-al" element={<OfferPage />} />
         <Route path="/cankaya-sehirler-arasi-nakliyat" element={<CankayaSehirlerarasi />} />
+        <Route path="/hakkimizda" element={<HakkimizdaSayfasi />} />
       </Routes>
     </div>
   );
