@@ -9,7 +9,7 @@ export const WHATSAPP_URL =
     "Merhaba, Kayseri şehirler arası nakliyat ve ev taşıma hizmeti için bilgi almak istiyorum."
   );
 
-export const ADDRESS = "Yenidoğan, Ertuğrul Gazi Cd No:17, 38280 Kayseri";
+export const ADDRESS = "İncili Sokak 48/B Etlik Mah. Keçiören / ANKARA";
 export const MAPS_EMBED =
   "https://maps.google.com/maps?q=" +
   encodeURIComponent(ADDRESS) +
