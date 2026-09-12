@@ -14,9 +14,11 @@ import WhatsAppFab from "@/components/site/WhatsAppFab";
 import Hakkimizda from "./components/site/Hakkimizda";
 import HakkimizdaSayfasi from './components/site/HakkimizdaSayfasi';
 import IletisimSayfasi from "./components/site/IletisimSayfasi";
-import CankayaSehirlerarasi from "./components/site/CankayaSehirlerarasi";
+import DikmenSehirlerarasi from "./components/site/DikmenSehirlerarasi";
 import NeYapiyoruzSayfasi from './components/site/NeYapiyoruzSayfasi';
 import NedenBizSayfasi from './components/site/NedenBizSayfasi';
+import DikmenOfisTasimaciligi from './components/site/DikmenOfisTasimaciligi';
+import DikmenDepolamaSayfasi from './components/site/DikmenDepolamaSayfasi';
 
 // Hizmet Sayfaları
 import HizmetDetay from "./components/site/HizmetDetay";
@@ -100,12 +102,14 @@ function App() {
         {/* YENİ OLUŞTURDUĞUMUZ İKİ SAYFANIN BAĞLANTILARI */}
         <Route path="/ne-yapiyoruz" element={<NeYapiyoruzSayfasi />} />
         <Route path="/neden-biz" element={<NedenBizSayfasi />} />
-        <Route path="/cankaya-evden-eve-nakliyat" element={<HizmetDetay />} />
+        <Route path="/dikmen-evden-eve-nakliyat" element={<HizmetDetay />} />
         <Route path="/dikmen-asansorlu-nakliyat" element={<AsansorluNakliyat />} />
+        <Route path="/dikmen-ofis-tasimaciligi" element={<DikmenOfisTasimaciligi />} />
+        <Route path="/dikmen-esya-depolama" element={<DikmenDepolamaSayfasi />} />
         
         <Route path="/iletisim" element={<IletisimSayfasi />} />
         <Route path="/teklif-al" element={<OfferPage />} />
-        <Route path="/cankaya-sehirler-arasi-nakliyat" element={<CankayaSehirlerarasi />} />
+        <Route path="/dikmen-sehirler-arasi-nakliyat" element={<DikmenSehirlerarasi />} />
         <Route path="/hakkimizda" element={<HakkimizdaSayfasi />} />
       </Routes>
     </div>

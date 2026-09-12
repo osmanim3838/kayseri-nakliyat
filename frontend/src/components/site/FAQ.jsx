@@ -8,16 +8,16 @@ const FAQ_DATA = [
     answer: "Evet, Dikmen'in engebeli yapısına ve dar sokaklarına uygun, 15. kata kadar ulaşabilen modüler asansör sistemlerimizle güvenli ve hızlı evden eve nakliyat hizmeti veriyoruz."
   },
   {
-    question: "Çankaya içi parça eşya taşıma fiyatları nedir?",
-    answer: "Çankaya bölgesindeki (Birlik, Oran, Yıldız vb.) parça eşya ve çeyiz taşımacılığında mesafe kısa olduğu için oldukça ekonomik fiyatlar sunuyoruz. Net fiyat için eşya durumunuza göre anında ücretsiz ekspertiz yapıyoruz."
+    question: "Dikmen içi parça eşya taşıma fiyatları nedir?",
+    answer: "Dikmen bölgesindeki (Birlik, Oran, Yıldız vb.) parça eşya ve çeyiz taşımacılığında mesafe kısa olduğu için oldukça ekonomik fiyatlar sunuyoruz. Net fiyat için eşya durumunuza göre anında ücretsiz ekspertiz yapıyoruz."
   },
   {
-    question: "Dikmen ve Çankaya'da sigortalı nakliyat yapıyor musunuz?",
-    answer: "Kesinlikle. Çankaya ve Dikmen merkezli tüm şehir içi ve şehirler arası taşımacılık işlemlerimizde eşyalarınız K1 ve K3 yetki belgelerimiz kapsamında tam kapsamlı sigortalanır."
+    question: "Dikmen'da sigortalı nakliyat yapıyor musunuz?",
+    answer: "Kesinlikle. Dikmen merkezli tüm şehir içi ve şehirler arası taşımacılık işlemlerimizde eşyalarınız K1 ve K3 yetki belgelerimiz kapsamında tam kapsamlı sigortalanır."
   },
   {
     question: "Taşınma günü ekstra bir ücret çıkar mı?",
-    answer: "Hayır, Çankaya ve Dikmen bölgesindeki taşınmalarınızdan önce yaptığımız ücretsiz keşif (ekspertiz) ile fiyatı sabitliyoruz. Anlaşılan fiyat dışında sürpriz bir ücret talep edilmez."
+    answer: "Hayır, Dikmen bölgesindeki taşınmalarınızdan önce yaptığımız ücretsiz keşif (ekspertiz) ile fiyatı sabitliyoruz. Anlaşılan fiyat dışında sürpriz bir ücret talep edilmez."
   }
 ];
 
@@ -32,7 +32,7 @@ export default function FAQ() {
             <MessageCircleQuestion className="h-6 w-6" />
           </div>
           <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-            Çankaya & Dikmen <span className="text-amber-500">Nakliyat SSS</span>
+            Dikmen & Dikmen <span className="text-amber-500">Nakliyat SSS</span>
           </h2>
           <p className="mt-4 text-slate-600">Bölgeye özel taşıma hizmetlerimiz hakkında en çok merak edilenler.</p>
         </div>

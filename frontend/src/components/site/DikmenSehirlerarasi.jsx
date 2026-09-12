@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppFab from "./WhatsAppFab";
 
-export default function CankayaSehirlerarasi() {
+export default function DikmenSehirlerarasi() {
   // Sayfa açıldığında en üste kaydırma
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +24,7 @@ export default function CankayaSehirlerarasi() {
               Profesyönel Şehirler Arası Çözümler
             </span>
             <h1 className="text-3xl font-black tracking-tight sm:text-5xl">
-              Çankaya Şehirler Arası Nakliyat: <span className="text-amber-500">Başkentten Türkiye'nin Dört Bir Yanına</span> Güvenli Taşınma
+              Dikmen Şehirler Arası Nakliyat: <span className="text-amber-500">Başkentten Türkiye'nin Dört Bir Yanına</span> Güvenli Taşınma
             </h1>
             <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
               Ankara'nın kalbinden yola çıkarak Türkiye'nin tüm şehirlerine sigortalı, asansörlü ve anahtar teslim evden eve nakliyat hizmeti sunuyoruz.
@@ -37,27 +37,27 @@ export default function CankayaSehirlerarasi() {
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col gap-8 text-slate-700 leading-relaxed text-sm sm:text-base">
             
             <p>
-              Ankara'nın kalbi ve en yoğun nüfuslu ilçesi olan <strong>Çankaya</strong>; memur tayinleri, öğrenci hareketliliği ve iş dünyasının merkezinde yer alması sebebiyle yıl boyunca yoğun bir taşınma sirkülasyonuna sahne olur. Çankaya şehirler arası nakliyat süreci, başkentin dinamik yapısı göz önüne alındığında titiz bir planlama gerektirir. İster İstanbul'un karmaşasına ister Ege'nin sahil kasabalarına taşınıyor olun, sürecin sorunsuz ilerlemesi seçeceğiniz firmanın profesyonelliğine bağlıdır.
+              Ankara'nın kalbi ve en yoğun nüfuslu ilçesi olan <strong>Dikmen</strong>; memur tayinleri, öğrenci hareketliliği ve iş dünyasının merkezinde yer alması sebebiyle yıl boyunca yoğun bir taşınma sirkülasyonuna sahne olur. Dikmen şehirler arası nakliyat süreci, başkentin dinamik yapısı göz önüne alındığında titiz bir planlama gerektirir. İster İstanbul'un karmaşasına ister Ege'nin sahil kasabalarına taşınıyor olun, sürecin sorunsuz ilerlemesi seçeceğiniz firmanın profesyonelliğine bağlıdır.
             </p>
 
             {/* 1. GÖRSEL */}
             <div className="my-2 overflow-hidden rounded-2xl shadow-md border border-slate-200">
               <img 
-                src="/resim1.jpg" 
-                alt="Çankaya Şehirler Arası Nakliyat Araçları" 
+                src="/dikmen-evden-eve-nakliyat-1.jpg" 
+                alt="Dikmen Şehirler Arası Nakliyat Araçları" 
                 className="w-full h-64 sm:h-80 object-cover object-center transition-transform duration-500 hover:scale-105"
               />
               <p className="bg-slate-100 py-2.5 px-4 text-center text-xs font-semibold text-slate-500">
-                Geniş filomuz ve deneyimli kadromuzla Çankaya'dan tüm Türkiye'ye güvenli sevkıyat.
+                Geniş filomuz ve deneyimli kadromuzla Dikmen'dan tüm Türkiye'ye güvenli sevkıyat.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">
-                Çankaya'da Nakliyat Sürecini Planlarken Bilmeniz Gerekenler
+                Dikmen'da Nakliyat Sürecini Planlarken Bilmeniz Gerekenler
               </h2>
               <p className="mb-4">
-                Çankaya gibi trafiği ve dar sokakları yoğun olabilen bir bölgede taşınma gününü organize etmek stratejik bir yaklaşım ister. Başarılı bir sürecin temellerini atmak için şu adımlara dikkat edilmelidir:
+                Dikmen gibi trafiği ve dar sokakları yoğun olabilen bir bölgede taşınma gününü organize etmek stratejik bir yaklaşım ister. Başarılı bir sürecin temellerini atmak için şu adımlara dikkat edilmelidir:
               </p>
               
               <ul className="grid grid-cols-1 gap-3 mt-4">
@@ -72,7 +72,7 @@ export default function CankayaSehirlerarasi() {
                   <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-slate-900 block">Bina Yönetimi İzni:</strong> 
-                    Çankaya'daki birçok site ve apartmanda taşınma saatleri belirli kurallara bağlıdır. Nakliye gününden önce yönetimle görüşülüp asansör veya park izinleri alınmalıdır.
+                    Dikmen'daki birçok site ve apartmanda taşınma saatleri belirli kurallara bağlıdır. Nakliye gününden önce yönetimle görüşülüp asansör veya park izinleri alınmalıdır.
                   </div>
                 </li>
                 <li className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
@@ -104,7 +104,7 @@ export default function CankayaSehirlerarasi() {
                 <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-100 flex flex-col gap-2">
                   <Truck className="h-6 w-6 text-amber-600" />
                   <h3 className="font-bold text-slate-900">Asansörlü Taşımacılık</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">Çankaya'nın yüksek katlı binalarında modüler dış cephe asansörleri kullanılarak eşyalar merdivenlere girmeden yüklenir.</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">Dikmen'nın yüksek katlı binalarında modüler dış cephe asansörleri kullanılarak eşyalar merdivenlere girmeden yüklenir.</p>
                 </div>
                 <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-100 flex flex-col gap-2">
                   <ShieldCheck className="h-6 w-6 text-amber-600" />
@@ -117,7 +117,7 @@ export default function CankayaSehirlerarasi() {
             {/* 2. GÖRSEL */}
             <div className="my-2 overflow-hidden rounded-2xl shadow-md border border-slate-200">
               <img 
-                src="/resim2.jpg" 
+                src="/dikmen-sehirler-arasi-nakliyat-2.jpg" 
                 alt="Asansörlü Şehirler Arası Nakliyat Hizmeti" 
                 className="w-full h-64 sm:h-80 object-cover object-center transition-transform duration-500 hover:scale-105"
               />
@@ -128,13 +128,13 @@ export default function CankayaSehirlerarasi() {
 
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">
-                Çankaya Şehirler Arası Taşımacılık Fiyatlarını Belirleyen Unsurlar
+                Dikmen Şehirler Arası Taşımacılık Fiyatlarını Belirleyen Unsurlar
               </h2>
               <p className="mb-4">
                 Nakliye bütçesi hesaplanırken sabit bir fiyat listesinden ziyade evinize ve rotanıza özel kriterler devreye girer:
               </p>
               <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                <li><strong>Mesafe:</strong> Çankaya ile varış şehri arasındaki kilometre, tüketilecek yakıt ve zaman üzerinden fiyatı belirler.</li>
+                <li><strong>Mesafe:</strong> Dikmen ile varış şehri arasındaki kilometre, tüketilecek yakıt ve zaman üzerinden fiyatı belirler.</li>
                 <li><strong>Eşya Hacmi:</strong> Evinizin oda sayısı (1+1, 3+1 vb.) tahsis edilecek aracın boyutunu ve personel sayısını belirler.</li>
                 <li><strong>Ekstra Hizmetler:</strong> Tam kapsamlı mutfak paketlemesi, her iki adreste asansör kurulumu veya özel taşıma gerektiren eşyalar maliyeti şekillendirir.</li>
               </ul>
@@ -142,7 +142,7 @@ export default function CankayaSehirlerarasi() {
 
             {/* ÇAĞRI (CTA) ALANI */}
             <div className="mt-8 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 p-8 text-white text-center shadow-lg shadow-amber-500/20">
-              <h3 className="text-xl font-black mb-2">Çankaya'dan Şehirler Arasına mı Taşınıyorsunuz?</h3>
+              <h3 className="text-xl font-black mb-2">Dikmen'dan Şehirler Arasına mı Taşınıyorsunuz?</h3>
               <p className="text-xs sm:text-sm text-amber-100 mb-6">Hemen bizimle iletişime geçin, size özel fiyat teklifini ve ücretsiz ekspertiz fırsatını kaçırmayın.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="tel:05055979406" className="rounded-xl bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-md transition-transform hover:scale-105">

@@ -8,8 +8,8 @@ const REVIEWS = [
   },
   {
     name: "Selin K.",
-    location: "Çankaya / Birlik Mahallesi",
-    text: "Çankaya Birlik mahallesindeki ofisimizi sorunsuz taşıdılar. Paketleme çok özenliydi, dosyalarımız ve elektronik cihazlarımız güvenle yeni ofise ulaştı. Arıcıoğlu ekibine teşekkürler."
+    location: "Dikmen / Birlik Mahallesi",
+    text: "Dikmen Birlik mahallesindeki ofisimizi sorunsuz taşıdılar. Paketleme çok özenliydi, dosyalarımız ve elektronik cihazlarımız güvenle yeni ofise ulaştı. Arıcıoğlu ekibine teşekkürler."
   },
   {
     name: "Murat T.",
@@ -26,7 +26,7 @@ export default function Testimonials() {
           <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
             Müşterilerimiz <span className="text-amber-500">Ne Diyor?</span>
           </h2>
-          <p className="mt-4 text-slate-600">Çankaya ve Dikmen bölgelerinde hizmet verdiğimiz mutlu müşterilerimiz.</p>
+          <p className="mt-4 text-slate-600">Dikmen bölgelerinde hizmet verdiğimiz mutlu müşterilerimiz.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

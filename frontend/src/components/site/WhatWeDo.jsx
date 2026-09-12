@@ -3,15 +3,15 @@ import { Package, Truck, ShieldCheck } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Çankaya & Dikmen Evden Eve Nakliyat",
+    title: "Dikmen & Dikmen Evden Eve Nakliyat",
     features: [
-      "Çankaya ve Dikmen bölgelerinde hızlı ve güvenli taşımacılık.",
+      "Dikmen bölgelerinde hızlı ve güvenli taşımacılık.",
       "Yeni evinize sıfır hasar ve %100 müşteri memnuniyeti garantisi.",
       "Alanında uzman, güler yüzlü ve profesyonel taşıma ekibi.",
     ],
     eyebrow: "01 / Şehir İçi Taşıma",
     caption: "Ankara'nın merkezinde stressiz taşınma",
-    img: "/resim6.jpg", // Senin yeni eklediğin logolu araç resmi
+    img: "/dikmen-hizmetlerimiz-6.jpg", // Senin yeni eklediğin logolu araç resmi
     icon: Package,
     span: "lg:col-span-3 lg:row-span-2",
     testid: "service-parca-esya",
@@ -43,7 +43,7 @@ const SERVICES = [
     ],
     eyebrow: "03 / Asansör & Ambalaj",
     caption: "Montaj ve teslim sonrası yerleşim desteği",
-    img: "/resim7.jpg", // Senin asansörlü araç fotoğrafın
+    img: "/dikmen-hizmetlerimiz-7.jpg", // Senin asansörlü araç fotoğrafın
     icon: ShieldCheck,
     span: "lg:col-span-3",
     testid: "service-paketleme",

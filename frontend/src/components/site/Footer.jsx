@@ -7,9 +7,11 @@ import {
 const FOOTER_LINKS = [
   { label: "Ana Sayfa", path: "/" },
   { label: "Kurumsal", path: "/#hakkimizda" },
-  { label: "Çankaya Evden Eve Nakliyat", path: "/cankaya-evden-eve-nakliyat" },
+  { label: "Dikmen Evden Eve Nakliyat", path: "/dikmen-evden-eve-nakliyat" },
   { label: "Dikmen Asansörlü Nakliyat", path: "/dikmen-asansorlu-nakliyat" },
-  { label: "Çankaya Şehirler Arası Nakliyat", path: "/cankaya-sehirler-arasi-nakliyat" },
+  { label: "Dikmen Şehirler Arası Nakliyat", path: "/dikmen-sehirler-arasi-nakliyat" },
+  { label: "Dikmen Ofis Taşımacılığı", path: "/dikmen-ofis-tasimaciligi" },
+  { label: "Dikmen Eşya Depolama", path: "/dikmen-esya-depolama" },
   { label: "İletişim", path: "/iletisim" }
 ];
 
@@ -116,7 +118,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 transition-colors hover:text-amber-400">
                 <Mail className="h-4 w-4 shrink-0 text-amber-500" />
-                <a href="mailto:info@cankayanakliyat.com">info@cankayanakliyat.com</a>
+                <a href="mailto:info@dikmennakliyat.com">info@dikmennakliyat.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-4 w-4 shrink-0 text-amber-500" />

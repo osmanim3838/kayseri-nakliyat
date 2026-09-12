@@ -36,7 +36,7 @@ export default function NedenBizSayfasi() {
             </span>
             <h1 className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl mb-6">
               Neden Arıcıoğlu Nakliyat? <br/>
-              <span className="text-amber-500 text-2xl sm:text-4xl lg:text-5xl">Çankaya ve Dikmen'deki Ayrıcalığınız</span>
+              <span className="text-amber-500 text-2xl sm:text-4xl lg:text-5xl">Dikmen'deki Ayrıcalığınız</span>
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 text-sm sm:text-base leading-relaxed">
               Yüzlerce nakliye firması arasından sıyrılmamızın bir sebebi var: Biz sadece eşya taşımıyoruz; 35 yıllık tecrübemizle güven, hız ve sıfır hasar garantisi sunuyoruz.
@@ -51,8 +51,8 @@ export default function NedenBizSayfasi() {
             <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full">
               {/* ANA RESİM */}
               <img 
-                src="/resim12.jpg" 
-                alt="Çankaya Dikmen Asansörlü Evden Eve Nakliyat Neden Biz Arıcıoğlu" 
+                src="/dikmen-neden-biz.jpg" 
+                alt="Dikmen Dikmen Asansörlü Evden Eve Nakliyat Neden Biz Arıcıoğlu" 
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
               
@@ -84,7 +84,7 @@ export default function NedenBizSayfasi() {
               {/* Kutu 3: Alt Orta */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] sm:w-auto bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl border border-white/50 flex items-center justify-between gap-6">
                 <div>
-                  <h4 className="font-black text-slate-900 text-sm sm:text-base mb-0.5">Çankaya & Dikmen Uzmanı</h4>
+                  <h4 className="font-black text-slate-900 text-sm sm:text-base mb-0.5">Dikmen & Dikmen Uzmanı</h4>
                   <p className="text-[10px] sm:text-xs font-medium text-slate-500">Yerel bölge hakimiyeti ile sorunsuz operasyon.</p>
                 </div>
                 <div className="h-10 w-10 rounded-full bg-amber-500 flex items-center justify-center shrink-0">
@@ -111,9 +111,9 @@ export default function NedenBizSayfasi() {
                   <MapPin className="h-7 w-7 text-amber-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-slate-900 mb-2">Çankaya ve Dikmen'de Bölgesel Hakimiyet</h3>
+                  <h3 className="text-xl font-black text-slate-900 mb-2">Dikmen'de Bölgesel Hakimiyet</h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                    Çankaya'nın site kurallarını, Dikmen'in dik yokuşlarını ve dar sokaklarını çok iyi biliyoruz. Diğer firmaların araç sokamadığı veya asansör kuramadığı noktalarda, biz önceden yaptığımız fizibilite sayesinde operasyonu kusursuz tamamlıyoruz.
+                    Dikmen'nın site kurallarını, Dikmen'in dik yokuşlarını ve dar sokaklarını çok iyi biliyoruz. Diğer firmaların araç sokamadığı veya asansör kuramadığı noktalarda, biz önceden yaptığımız fizibilite sayesinde operasyonu kusursuz tamamlıyoruz.
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default function NedenBizSayfasi() {
           <section className="text-center pb-10">
             <h3 className="text-2xl font-black text-slate-900 mb-4">Farkı Kendiniz Görün</h3>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              Siz de eşyalarınızı riske atmak istemiyorsanız, Ankara'nın en güvenilir nakliyat firmasıyla tanışın. Çankaya ve Dikmen bölgesi için anında fiyat alın.
+              Siz de eşyalarınızı riske atmak istemiyorsanız, Ankara'nın en güvenilir nakliyat firmasıyla tanışın. Dikmen bölgesi için anında fiyat alın.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="tel:05055979406" className="rounded-xl bg-amber-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-amber-500/30 transition-transform hover:scale-105 hover:bg-amber-600">

@@ -9,9 +9,11 @@ const LINKS = [
   { 
     label: "Hizmetlerimiz", 
     subLinks: [
-      { label: "Çankaya Evden Eve Nakliyat", to: "/cankaya-evden-eve-nakliyat" },
+      { label: "Dikmen Evden Eve Nakliyat", to: "/dikmen-evden-eve-nakliyat" },
       { label: "Dikmen Asansörlü Nakliyat", to: "/dikmen-asansorlu-nakliyat" },
-      { label: "Çankaya Şehirler Arası Nakliyat", to: "/cankaya-sehirler-arasi-nakliyat" }
+      { label: "Dikmen Şehirler Arası Nakliyat", to: "/dikmen-sehirler-arasi-nakliyat" },
+      { label: "Dikmen Ofis Taşımacılığı", to: "/dikmen-ofis-tasimaciligi" },
+      { label: "Dikmen Eşya Depolama", to: "/dikmen-esya-depolama" }
     ]
   },
   { label: "Ne Yapıyoruz", to: "/ne-yapiyoruz" },

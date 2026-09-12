@@ -34,10 +34,10 @@ export default function NeYapiyoruzSayfasi() {
             </span>
             <h1 className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl mb-6">
               Ne Yapıyoruz? <br/>
-              <span className="text-amber-500 text-2xl sm:text-4xl lg:text-5xl">Çankaya ve Dikmen'de Kusursuz Taşımacılık</span>
+              <span className="text-amber-500 text-2xl sm:text-4xl lg:text-5xl">Dikmen'de Kusursuz Taşımacılık</span>
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 text-sm sm:text-base leading-relaxed">
-              Eşyalarınızı sadece bir adresten diğerine taşımıyoruz; onlara değer veriyor, sigortalıyor ve yeni yaşam alanınıza hasarsız bir şekilde ulaştırıyoruz. Ankara'nın her noktasına, özellikle Çankaya ve Dikmen bölgesine özel VIP nakliyat çözümleri sunuyoruz.
+              Eşyalarınızı sadece bir adresten diğerine taşımıyoruz; onlara değer veriyor, sigortalıyor ve yeni yaşam alanınıza hasarsız bir şekilde ulaştırıyoruz. Ankara'nın her noktasına, özellikle Dikmen bölgesine özel VIP nakliyat çözümleri sunuyoruz.
             </p>
           </div>
         </section>
@@ -49,8 +49,8 @@ export default function NeYapiyoruzSayfasi() {
             <div className="relative h-64 sm:h-96 lg:h-[500px] w-full overflow-hidden">
               {/* RESİM 11 BURAYA GELECEK - SEO ALT ETİKETİ İLE */}
               <img 
-                src="/resim11.jpg" 
-                alt="Çankaya ve Dikmen Asansörlü Evden Eve Nakliyat - Atakule Manzaralı Arıcıoğlu Nakliyat" 
+                src="/dikmen-ne-yapiyoruz.jpg" 
+                alt="Dikmen Asansörlü Evden Eve Nakliyat - Atakule Manzaralı Arıcıoğlu Nakliyat" 
                 className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-6 sm:p-10">
@@ -78,9 +78,9 @@ export default function NeYapiyoruzSayfasi() {
                 <div className="h-14 w-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Package className="h-7 w-7 text-amber-500" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 mb-3">Çankaya Evden Eve Nakliyat</h3>
+                <h3 className="text-xl font-black text-slate-900 mb-3">Dikmen Evden Eve Nakliyat</h3>
                 <p className="text-slate-600 mb-5 leading-relaxed text-sm">
-                  Eşyalarınızın paketlenmesinden mobilyalarınızın de-montaj ve montajına kadar tüm süreci anahtar teslim yönetiyoruz. Çankaya bölgesindeki sitelerin ve apartmanların taşıma kurallarına hakim, profesyonel bir ekiple hizmet veriyoruz.
+                  Eşyalarınızın paketlenmesinden mobilyalarınızın de-montaj ve montajına kadar tüm süreci anahtar teslim yönetiyoruz. Dikmen bölgesindeki sitelerin ve apartmanların taşıma kurallarına hakim, profesyonel bir ekiple hizmet veriyoruz.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-slate-700 font-medium"><CheckCircle2 className="h-4 w-4 text-amber-500" /> Havalı naylon ile A'dan Z'ye ambalajlama</li>
@@ -110,7 +110,7 @@ export default function NeYapiyoruzSayfasi() {
                 </div>
                 <h3 className="text-xl font-black text-slate-900 mb-3">Şehirler Arası Nakliyat</h3>
                 <p className="text-slate-600 mb-5 leading-relaxed text-sm">
-                  Ankara'dan Türkiye'nin 81 iline kesintisiz, sigortalı nakliyat hizmeti. Çankaya veya Dikmen'deki evinizden alınan eşyalarınız, geniş hacimli ve çelik kasalı araçlarımızla yeni şehrinize zamanında ve eksiksiz teslim edilir.
+                  Ankara'dan Türkiye'nin 81 iline kesintisiz, sigortalı nakliyat hizmeti. Dikmen veya Dikmen'deki evinizden alınan eşyalarınız, geniş hacimli ve çelik kasalı araçlarımızla yeni şehrinize zamanında ve eksiksiz teslim edilir.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-slate-700 font-medium"><CheckCircle2 className="h-4 w-4 text-amber-500" /> Tam kapsamlı nakliyat sigortası</li>
@@ -125,7 +125,7 @@ export default function NeYapiyoruzSayfasi() {
                 </div>
                 <h3 className="text-xl font-black text-slate-900 mb-3">Ofis ve İş Yeri Taşımacılığı</h3>
                 <p className="text-slate-600 mb-5 leading-relaxed text-sm">
-                  Çankaya'daki plazalardan, Dikmen'deki iş merkezlerine kadar ticari taşınmalarınızda iş kaybınızı en aza indiriyoruz. Evraklarınız, elektronik cihazlarınız ve ofis mobilyalarınız sistemli bir şekilde etiketlenerek taşınır.
+                  Dikmen'daki plazalardan, Dikmen'deki iş merkezlerine kadar ticari taşınmalarınızda iş kaybınızı en aza indiriyoruz. Evraklarınız, elektronik cihazlarınız ve ofis mobilyalarınız sistemli bir şekilde etiketlenerek taşınır.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-slate-700 font-medium"><CheckCircle2 className="h-4 w-4 text-amber-500" /> Gizlilik ve güvenlik öncelikli taşıma</li>

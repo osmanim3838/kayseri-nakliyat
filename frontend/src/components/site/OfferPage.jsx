@@ -41,7 +41,7 @@ export default function OfferPage() {
     toFloor: "Giriş / Zemin Kat",
     elevatorFrom: true,
     elevatorTo: true,
-    fromCity: "Çankaya",
+    fromCity: "Dikmen",
     toCity: "Dikmen",
     distance: 750,
     services: ["montaj"],
@@ -264,7 +264,7 @@ export default function OfferPage() {
                             data-testid="offer-from-city"
                             value={form.fromCity}
                             onChange={(event) => setForm((current) => ({ ...current, fromCity: event.target.value }))}
-                            placeholder="Örn. Ankara / Çankaya"
+                            placeholder="Örn. Ankara / Dikmen"
                             className="w-full rounded-2xl border border-border bg-white px-4 py-3 font-normal text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary shadow-sm"
                           />
                         </label>

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, MessageCircle, MapPin, User, Map, Calendar, Package, Hexagon, Mail, ChevronDown, ShieldCheck, Truck, Home } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
 
-const HERO_BG = "/resim.jpg";
+const HERO_BG = "/dikmen-asansorlu-nakliyat-hero.jpg";
 
 const LINES = [
   ["Arıcıoğlu", "Şehirler", "Arası"], 
@@ -110,7 +110,7 @@ export default function Hero() {
             animate="show"
             className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-slate-300 drop-shadow-md"
           >
-            Yarım asra yaklaşan Çankaya ve Dikmen merkezli deneyimimizle nakliyat süreçlerinizi baştan sona profesyonellikle planlıyoruz. Gelişmiş asansör sistemlerimiz, uzman ambalajlama ekibimiz ve sigortalı altyapımızla eşyalarınızı değil, güven taşıyoruz.
+            Yarım asra yaklaşan Dikmen merkezli deneyimimizle nakliyat süreçlerinizi baştan sona profesyonellikle planlıyoruz. Gelişmiş asansör sistemlerimiz, uzman ambalajlama ekibimiz ve sigortalı altyapımızla eşyalarınızı değil, güven taşıyoruz.
           </motion.p>
 
           <motion.div
@@ -156,7 +156,7 @@ export default function Hero() {
             className="mt-8 flex items-center gap-2 text-sm font-medium text-white/90"
           >
             <MapPin className="h-4 w-4 text-amber-500" />
-            1986'dan beri — Çankaya ve Dikmen merkezli profesyonel taşımacılık
+            1986'dan beri — Dikmen merkezli profesyonel taşımacılık
           </motion.div>
 
           {/* İSTATİSTİKLER */}

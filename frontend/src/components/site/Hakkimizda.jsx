@@ -26,7 +26,7 @@ export default function About() {
             </p>
             
             <h2 className="font-hero text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-              Çankaya'nın Köklü ve Güvenilir{" "}
+              Dikmen'nın Köklü ve Güvenilir{" "}
               <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                 Nakliyat Markası
               </span>
@@ -34,10 +34,10 @@ export default function About() {
 
             <div className="mt-6 space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
               <p>
-                Arıcıoğlu Nakliyat güvencesiyle tek çatı altında buluşan firmamız, 35 yıllık köklü geçmişiyle Çankaya merkezli olarak faaliyet göstermektedir. Ankara içi nakliyat, Çankaya evden eve taşımacılık ve Türkiye'nin 81 iline yönelik şehirler arası nakliye süreçlerinizde profesyonel çözümler üretiyoruz.
+                Arıcıoğlu Nakliyat güvencesiyle tek çatı altında buluşan firmamız, 35 yıllık köklü geçmişiyle Dikmen merkezli olarak faaliyet göstermektedir. Ankara içi nakliyat, Dikmen evden eve taşımacılık ve Türkiye'nin 81 iline yönelik şehirler arası nakliye süreçlerinizde profesyonel çözümler üretiyoruz.
               </p>
               <p>
-                Ulaştırma ve Altyapı Bakanlığı tarafından onaylı K1 ve K3 Yetki Belgelerimiz ile kayıt dışı taşımacılıktan tamamen uzak duruyoruz. Tüm taşıma işlemlerimizi yazılı sözleşme ve Nakliyat Emtia Sigortası garantisi altında gerçekleştiriyoruz. Çankaya nakliye firmaları arasında, modern asansörlü taşımacılık sistemlerimiz ve güçlü ekipman altyapımızla fark yaratmaktayız.
+                Ulaştırma ve Altyapı Bakanlığı tarafından onaylı K1 ve K3 Yetki Belgelerimiz ile kayıt dışı taşımacılıktan tamamen uzak duruyoruz. Tüm taşıma işlemlerimizi yazılı sözleşme ve Nakliyat Emtia Sigortası garantisi altında gerçekleştiriyoruz. Dikmen nakliye firmaları arasında, modern asansörlü taşımacılık sistemlerimiz ve güçlü ekipman altyapımızla fark yaratmaktayız.
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default function About() {
               {/* En büyük fotoğraf (resim3.jpg) */}
               <div className="col-span-12 overflow-hidden rounded-[2rem] shadow-2xl shadow-orange-900/10 sm:col-span-7 sm:h-[500px]">
                 <img
-                  src="/resim3.jpg"
+                  src="/dikmen-nakliyat-genel-3.jpg"
                   alt="Asansörlü Taşımacılık"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -105,14 +105,14 @@ export default function About() {
               <div className="col-span-12 flex flex-col gap-4 sm:col-span-5 sm:gap-6">
                 <div className="h-48 overflow-hidden rounded-[2rem] shadow-lg shadow-orange-900/5 sm:h-[238px]">
                   <img
-                    src="/resim1.jpg"
+                    src="/dikmen-evden-eve-nakliyat-1.jpg"
                     alt="Arıcıoğlu Nakliyat Araç Filosu"
                     className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
                 <div className="h-48 overflow-hidden rounded-[2rem] shadow-lg shadow-orange-900/5 sm:h-[238px]">
                   <img
-                    src="/resim2.jpg"
+                    src="/dikmen-sehirler-arasi-nakliyat-2.jpg"
                     alt="Profesyonel Paketleme"
                     className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   />
