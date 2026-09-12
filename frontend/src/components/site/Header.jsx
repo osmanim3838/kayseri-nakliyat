@@ -9,6 +9,7 @@ const LINKS = [
   { 
     label: "Hizmetlerimiz", 
     subLinks: [
+      { label: "Evden Eve Nakliyat", to: "/evden-eve-nakliyat" },
       { label: "Dikmen Evden Eve Nakliyat", to: "/dikmen-evden-eve-nakliyat" },
       { label: "Dikmen Asansörlü Nakliyat", to: "/dikmen-asansorlu-nakliyat" },
       { label: "Dikmen Şehirler Arası Nakliyat", to: "/dikmen-sehirler-arasi-nakliyat" },

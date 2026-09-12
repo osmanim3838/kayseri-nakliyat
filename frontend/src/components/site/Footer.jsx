@@ -7,6 +7,7 @@ import {
 const FOOTER_LINKS = [
   { label: "Ana Sayfa", path: "/" },
   { label: "Kurumsal", path: "/#hakkimizda" },
+  { label: "Evden Eve Nakliyat", path: "/evden-eve-nakliyat" },
   { label: "Dikmen Evden Eve Nakliyat", path: "/dikmen-evden-eve-nakliyat" },
   { label: "Dikmen Asansörlü Nakliyat", path: "/dikmen-asansorlu-nakliyat" },
   { label: "Dikmen Şehirler Arası Nakliyat", path: "/dikmen-sehirler-arasi-nakliyat" },
