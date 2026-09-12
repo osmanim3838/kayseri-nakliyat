@@ -14,8 +14,8 @@ const LINKS = [
       { label: "Çankaya Şehirler Arası Nakliyat", to: "/cankaya-sehirler-arasi-nakliyat" }
     ]
   },
-  { label: "Ne Yapıyoruz", href: "/#ne-yapiyoruz" },
-  { label: "Neden Biz", href: "/#neden-biz" },
+  { label: "Ne Yapıyoruz", to: "/ne-yapiyoruz" },
+  { label: "Neden Biz", to: "/neden-biz" },
   { label: "İletişim", to: "/iletisim" }
 ];
 export default function Header() {

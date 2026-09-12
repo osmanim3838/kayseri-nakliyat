@@ -1,10 +1,10 @@
 // Central brand + contact constants so the phone/WhatsApp stay consistent everywhere.
 export const BRAND = "kayseriparsiyel";
 
-export const PHONE_DISPLAY = "0544 717 65 00";
-export const PHONE_TEL = "+905447176500";
+export const PHONE_DISPLAY = "0505 597 94 06";
+export const PHONE_TEL = "+905055979406";
 export const WHATSAPP_URL =
-  "https://wa.me/905331275500?text=" +
+  "https://wa.me/905055979406?text=" +
   encodeURIComponent(
     "Merhaba, Kayseri şehirler arası nakliyat ve ev taşıma hizmeti için bilgi almak istiyorum."
   );

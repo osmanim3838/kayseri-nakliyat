@@ -11,11 +11,10 @@ export default function Logo({ className = "", forceDark = false }) {
       aria-label="Arıcıoğlu Nakliyat Ana Sayfa"
     >
       <img 
-        src="/logo.png" 
+        src="/logo2.png" 
         alt="Arıcıoğlu Nakliyat" 
-        /* h-12, h-14, h-16 ile boyutunu ciddi oranda büyüttük. Akıllı renk sistemi eklendi. */
         className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 h-12 sm:h-14 lg:h-16 ${
-          forceDark ? "brightness-0 opacity-80 group-hover:opacity-100" : ""
+          !forceDark ? "drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" : ""
         }`} 
       />
     </button>
