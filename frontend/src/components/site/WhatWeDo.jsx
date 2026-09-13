@@ -3,7 +3,7 @@ import { Package, Truck, ShieldCheck } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Dikmen & Dikmen Evden Eve Nakliyat",
+    title: "Dikmen Evden Eve Nakliyat",
     features: [
       "Dikmen bölgelerinde hızlı ve güvenli taşımacılık.",
       "Yeni evinize sıfır hasar ve %100 müşteri memnuniyeti garantisi.",

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom"; // useLocation eklendi
+import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 
 const LINKS = [
@@ -10,6 +10,7 @@ const LINKS = [
     label: "Hizmetlerimiz", 
     subLinks: [
       { label: "Evden Eve Nakliyat", to: "/evden-eve-nakliyat" },
+      { label: "Asansörlü Nakliyat", to: "/asansorlu-nakliyat" },
       { label: "Dikmen Evden Eve Nakliyat", to: "/dikmen-evden-eve-nakliyat" },
       { label: "Dikmen Asansörlü Nakliyat", to: "/dikmen-asansorlu-nakliyat" },
       { label: "Dikmen Şehirler Arası Nakliyat", to: "/dikmen-sehirler-arasi-nakliyat" },
@@ -21,6 +22,66 @@ const LINKS = [
   { label: "Neden Biz", to: "/neden-biz" },
   { label: "İletişim", to: "/iletisim" }
 ];
+
+/* ── Ayrı bileşen: dropdown'u yönetir (Hook kurallarına uygun) ── */
+function DropdownMenu({ link, isHeaderActive }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef(null);
+  const navigate = useNavigate();
+
+  const handleMouseEnter = () => {
+    clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  return (
+    <div
+      className="relative py-2"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <span
+        className={`flex cursor-pointer items-center gap-1 text-sm font-bold transition-colors duration-200 ${
+          isHeaderActive ? "text-slate-700 hover:text-amber-500" : "text-white/90 hover:text-white"
+        }`}
+      >
+        {link.label}
+        <ChevronDown
+          className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </span>
+
+      {/* Şeffaf köprü: label ile menü arasında boşluk bırakmaz, hover kopmaz */}
+      <div className="absolute left-0 top-full w-56 pt-2">
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.15 }}
+              className="flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl"
+            >
+              {link.subLinks.map((sub, j) => (
+                <button
+                  key={j}
+                  onClick={() => { setOpen(false); navigate(sub.to); }}
+                  className="w-full text-left border-b border-slate-50 px-4 py-3 text-sm font-semibold text-slate-600 transition-colors hover:bg-amber-50 hover:text-amber-600"
+                >
+                  {sub.label}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -32,22 +93,19 @@ export default function Header() {
     
     if (window.location.pathname !== "/") {
       navigate("/");
-      // Başka sayfadan geliyorsak 300 milisaniye bekle ve kaydır
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 300);
     } else {
-      // Zaten ana sayfadaysak menünün kapanma animasyonunu bekle (300ms) ve öyle kaydır
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 300);
     }
   };
-  const location = useLocation(); // Hangi sayfada olduğumuzu bulur
+  const location = useLocation();
 
-  // İŞTE SİHİR BURADA: Ana sayfada değilsek, menüyü her zaman "kaydırılmış (renkli)" gibi göster.
   const isInnerPage = location.pathname !== "/";
   const isHeaderActive = scrolled || isInnerPage;
 
@@ -72,28 +130,13 @@ export default function Header() {
         </div>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {LINKS.map((l, i) => (
+          {LINKS.map((l, i) =>
             l.subLinks ? (
-              <div key={i} className="group relative py-2">
-                <span className={`flex cursor-pointer items-center gap-1 text-sm font-bold transition-colors duration-200 ${isHeaderActive ? "text-slate-700 hover:text-amber-500" : "text-white/90 hover:text-white"}`}>
-                  {l.label} <ChevronDown className="h-3 w-3" />
-                </span>
-                <div className="absolute left-0 top-full mt-2 hidden w-56 flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl group-hover:flex">
-                  {l.subLinks.map((sub, j) => (
-                    <button 
-                      key={j} 
-                      onClick={() => navigate(sub.to)} 
-                      className="w-full text-left border-b border-slate-50 px-4 py-3 text-sm font-semibold text-slate-600 transition-colors hover:bg-amber-50 hover:text-amber-600"
-                    >
-                      {sub.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              <DropdownMenu key={i} link={l} isHeaderActive={isHeaderActive} />
             ) : l.to ? (
-              <button 
-                key={i} 
-                onClick={() => navigate(l.to)} 
+              <button
+                key={i}
+                onClick={() => navigate(l.to)}
                 className={`text-sm font-bold transition-colors duration-200 ${isHeaderActive ? "text-slate-700 hover:text-amber-500" : "text-white/90 hover:text-white"}`}
               >
                 {l.label}
@@ -108,7 +151,7 @@ export default function Header() {
                 {l.label}
               </a>
             )
-          ))}
+          )}
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
@@ -142,19 +185,20 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobil Menü */}
       <AnimatePresence>
         {open && (
           <motion.nav initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="glass overflow-hidden border-t border-slate-200 bg-white/95 md:hidden">
             <div className="flex flex-col px-5 py-4">
-              {LINKS.map((l, i) => (
+              {LINKS.map((l, i) =>
                 l.subLinks ? (
                   <div key={i} className="flex flex-col border-b border-slate-100 py-2">
                     <span className="py-2 text-base font-bold text-slate-800">{l.label}</span>
                     <div className="flex flex-col pl-4">
                       {l.subLinks.map((sub, j) => (
-                        <button 
-                          key={j} 
-                          onClick={() => { setOpen(false); navigate(sub.to); }} 
+                        <button
+                          key={j}
+                          onClick={() => { setOpen(false); navigate(sub.to); }}
                           className="w-full text-left py-2 text-sm font-semibold text-slate-500 hover:text-amber-500"
                         >
                           - {sub.label}
@@ -163,27 +207,24 @@ export default function Header() {
                     </div>
                   </div>
                 ) : l.to ? (
-                  <button 
-                    key={i} 
-                    onClick={() => { setOpen(false); navigate(l.to); }} 
+                  <button
+                    key={i}
+                    onClick={() => { setOpen(false); navigate(l.to); }}
                     className="w-full text-left border-b border-slate-100 py-3 text-base font-bold text-slate-800 hover:text-amber-500"
                   >
                     {l.label}
                   </button>
                 ) : (
-                 <a 
-  key={i} 
-  href={l.href} 
-  onClick={(e) => { 
-    setOpen(false); 
-    handleAnchorClick(e, l.href); 
-  }} 
-  className="w-full text-left border-b border-slate-100 py-3 text-base font-bold text-slate-800 hover:text-amber-500"
->
-  {l.label}
-</a>
+                  <a
+                    key={i}
+                    href={l.href}
+                    onClick={(e) => { setOpen(false); handleAnchorClick(e, l.href); }}
+                    className="w-full text-left border-b border-slate-100 py-3 text-base font-bold text-slate-800 hover:text-amber-500"
+                  >
+                    {l.label}
+                  </a>
                 )
-              ))}
+              )}
 
               <button
                 onClick={() => { setOpen(false); navigate("/teklif-al"); }}

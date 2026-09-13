@@ -20,6 +20,7 @@ import NedenBizSayfasi from './components/site/NedenBizSayfasi';
 import DikmenOfisTasimaciligi from './components/site/DikmenOfisTasimaciligi';
 import DikmenDepolamaSayfasi from './components/site/DikmenDepolamaSayfasi';
 import EvdenEveNakliyatSayfasi from './components/site/EvdenEveNakliyatSayfasi';
+import AsansorluNakliyatSayfasi from './components/site/AsansorluNakliyatSayfasi';
 
 // Hizmet Sayfaları
 import HizmetDetay from "./components/site/HizmetDetay";
@@ -108,6 +109,7 @@ function App() {
         <Route path="/dikmen-ofis-tasimaciligi" element={<DikmenOfisTasimaciligi />} />
         <Route path="/dikmen-esya-depolama" element={<DikmenDepolamaSayfasi />} />
         <Route path="/evden-eve-nakliyat" element={<EvdenEveNakliyatSayfasi />} />
+        <Route path="/asansorlu-nakliyat" element={<AsansorluNakliyatSayfasi />} />
         
         <Route path="/iletisim" element={<IletisimSayfasi />} />
         <Route path="/teklif-al" element={<OfferPage />} />
